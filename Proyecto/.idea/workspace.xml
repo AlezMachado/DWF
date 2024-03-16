@@ -9,21 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e56a7c1-476f-4c88-bf3f-d58460ddf4fd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sv/edu/udb/www/entities/ClienteEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sv/edu/udb/www/entities/ConsumoEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sv/edu/udb/www/entities/HabitacionEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sv/edu/udb/www/entities/PagoEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sv/edu/udb/www/entities/PersonaEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sv/edu/udb/www/entities/ProductoEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sv/edu/udb/www/entities/ReservaEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sv/edu/udb/www/entities/TrabajadorEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-    </list>
+    <list default="true" id="9e56a7c1-476f-4c88-bf3f-d58460ddf4fd" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,14 +56,15 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/alexa/Downloads/Alex 01-2024/DWF/DWF LAB/GUIA07/PracticaJPA/target/PracticaJPA-1.0-SNAPSHOT/WEB-INF/lib/mysql-connector-java-8.0.27.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "SQL Resolution Scopes",
     "vue.rearranger.settings.migration": "true"
   },
@@ -187,7 +174,7 @@
       <option name="presentableId" value="Default" />
       <updated>1710625835332</updated>
       <workItem from="1710625836564" duration="462000" />
-      <workItem from="1710627421639" duration="1640000" />
+      <workItem from="1710627421639" duration="2121000" />
     </task>
     <servers />
   </component>
