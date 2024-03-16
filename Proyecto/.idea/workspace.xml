@@ -62,9 +62,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
+    "project.structure.side.proportion": "0.45517242",
     "settings.editor.selected.configurable": "SQL Resolution Scopes",
     "vue.rearranger.settings.migration": "true"
   },
@@ -174,7 +174,7 @@
       <option name="presentableId" value="Default" />
       <updated>1710625835332</updated>
       <workItem from="1710625836564" duration="462000" />
-      <workItem from="1710627421639" duration="2121000" />
+      <workItem from="1710627421639" duration="2204000" />
     </task>
     <servers />
   </component>
