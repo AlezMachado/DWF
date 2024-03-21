@@ -10,15 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e56a7c1-476f-4c88-bf3f-d58460ddf4fd" name="Changes" comment="Mapeo BDD">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sv/edu/udb/www/entities/UsersEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5c407ac7-1bbd-45ed-9d2e-5f259153843d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5c407ac7-1bbd-45ed-9d2e-5f259153843d.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sv/edu/udb/www/entities/PersonaEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sv/edu/udb/www/entities/PersonaEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/Login.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Login.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +67,7 @@
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "176",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/alexa/Downloads/Alex 01-2024/DWF/DWF LAB/GUIA07/PracticaJPA/target/PracticaJPA-1.0-SNAPSHOT/WEB-INF/lib/mysql-connector-java-8.0.27.jar",
+    "last_opened_file_path": "C:/Users/alexa/Downloads/Alex 01-2024/DWF/Proyecto Catedra/DWF/Proyecto/src/main/webapp/resources/css",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -96,6 +90,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\alexa\Downloads\Alex 01-2024\DWF\Proyecto Catedra\DWF\Proyecto\src\main\webapp\resources\css" />
+    </key>
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="sv.edu.udb.www.entities" />
       <recent name="" />
@@ -193,7 +190,7 @@
       <updated>1710625835332</updated>
       <workItem from="1710625836564" duration="462000" />
       <workItem from="1710627421639" duration="2475000" />
-      <workItem from="1711043915345" duration="10162000" />
+      <workItem from="1711043915345" duration="13096000" />
     </task>
     <task id="LOCAL-00001" summary="Login">
       <option name="closed" value="true" />
@@ -227,7 +224,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711056918298</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Mapeo BDD">
+      <option name="closed" value="true" />
+      <created>1711062565700</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1711062565700</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
