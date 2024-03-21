@@ -9,7 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e56a7c1-476f-4c88-bf3f-d58460ddf4fd" name="Changes" comment="Login" />
+    <list default="true" id="9e56a7c1-476f-4c88-bf3f-d58460ddf4fd" name="Changes" comment="Mapeo BDD">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sv/edu/udb/www/entities/UsersEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5c407ac7-1bbd-45ed-9d2e-5f259153843d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5c407ac7-1bbd-45ed-9d2e-5f259153843d.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sv/edu/udb/www/entities/PersonaEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sv/edu/udb/www/entities/PersonaEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Login.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Login.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,9 +29,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jspx File" />
-        <option value="Class" />
         <option value="facelets" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -70,7 +80,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.45517242",
     "settings.editor.selected.configurable": "preferences.JavaFX",
@@ -183,7 +193,7 @@
       <updated>1710625835332</updated>
       <workItem from="1710625836564" duration="462000" />
       <workItem from="1710627421639" duration="2475000" />
-      <workItem from="1711043915345" duration="4338000" />
+      <workItem from="1711043915345" duration="10162000" />
     </task>
     <task id="LOCAL-00001" summary="Login">
       <option name="closed" value="true" />
@@ -209,7 +219,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711056465356</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Mapeo BDD">
+      <option name="closed" value="true" />
+      <created>1711056918298</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1711056918298</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,7 +235,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Login" />
-    <option name="LAST_COMMIT_MESSAGE" value="Login" />
+    <MESSAGE value="Mapeo BDD" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mapeo BDD" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
