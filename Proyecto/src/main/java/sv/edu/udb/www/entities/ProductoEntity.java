@@ -3,6 +3,7 @@ package sv.edu.udb.www.entities;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
+import java.util.Collection;
 
 @Entity
 @Table(name = "producto", schema = "basereserva", catalog = "")
@@ -23,6 +24,8 @@ public class ProductoEntity {
     @Basic
     @Column(name = "precio_venta", nullable = false, precision = 2)
     private BigDecimal precioVenta;
+    @OneToMany(mappedBy = "productoByIdproducto")
+    private Collection<ConsumoEntity> consumosByIdproducto;
 
     public int getIdproducto() {
         return idproducto;
@@ -88,5 +91,13 @@ public class ProductoEntity {
         result = 31 * result + (unidadMedida != null ? unidadMedida.hashCode() : 0);
         result = 31 * result + (precioVenta != null ? precioVenta.hashCode() : 0);
         return result;
+    }
+
+    public Collection<ConsumoEntity> getConsumosByIdproducto() {
+        return consumosByIdproducto;
+    }
+
+    public void setConsumosByIdproducto(Collection<ConsumoEntity> consumosByIdproducto) {
+        this.consumosByIdproducto = consumosByIdproducto;
     }
 }

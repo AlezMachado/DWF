@@ -2,6 +2,8 @@ package sv.edu.udb.www.entities;
 
 import jakarta.persistence.*;
 
+import java.util.Collection;
+
 @Entity
 @Table(name = "cliente", schema = "basereserva", catalog = "")
 public class ClienteEntity {
@@ -12,6 +14,11 @@ public class ClienteEntity {
     @Basic
     @Column(name = "codigo_cliente", nullable = false, length = 10)
     private String codigoCliente;
+    @OneToOne
+    @JoinColumn(name = "idpersona", referencedColumnName = "idpersona", nullable = false)
+    private PersonaEntity personaByIdpersona;
+    @OneToMany(mappedBy = "clienteByIdcliente")
+    private Collection<ReservaEntity> reservasByIdpersona;
 
     public int getIdpersona() {
         return idpersona;
@@ -48,5 +55,21 @@ public class ClienteEntity {
         int result = idpersona;
         result = 31 * result + (codigoCliente != null ? codigoCliente.hashCode() : 0);
         return result;
+    }
+
+    public PersonaEntity getPersonaByIdpersona() {
+        return personaByIdpersona;
+    }
+
+    public void setPersonaByIdpersona(PersonaEntity personaByIdpersona) {
+        this.personaByIdpersona = personaByIdpersona;
+    }
+
+    public Collection<ReservaEntity> getReservasByIdpersona() {
+        return reservasByIdpersona;
+    }
+
+    public void setReservasByIdpersona(Collection<ReservaEntity> reservasByIdpersona) {
+        this.reservasByIdpersona = reservasByIdpersona;
     }
 }

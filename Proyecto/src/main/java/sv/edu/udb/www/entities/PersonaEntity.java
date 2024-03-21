@@ -33,6 +33,10 @@ public class PersonaEntity {
     @Basic
     @Column(name = "email", nullable = true, length = 25)
     private String email;
+    @OneToOne(mappedBy = "personaByIdpersona")
+    private ClienteEntity clienteByIdpersona;
+    @OneToOne(mappedBy = "personaByIdpersona")
+    private TrabajadorEntity trabajadorByIdpersona;
 
     public int getIdpersona() {
         return idpersona;
@@ -139,5 +143,21 @@ public class PersonaEntity {
         result = 31 * result + (telefono != null ? telefono.hashCode() : 0);
         result = 31 * result + (email != null ? email.hashCode() : 0);
         return result;
+    }
+
+    public ClienteEntity getClienteByIdpersona() {
+        return clienteByIdpersona;
+    }
+
+    public void setClienteByIdpersona(ClienteEntity clienteByIdpersona) {
+        this.clienteByIdpersona = clienteByIdpersona;
+    }
+
+    public TrabajadorEntity getTrabajadorByIdpersona() {
+        return trabajadorByIdpersona;
+    }
+
+    public void setTrabajadorByIdpersona(TrabajadorEntity trabajadorByIdpersona) {
+        this.trabajadorByIdpersona = trabajadorByIdpersona;
     }
 }

@@ -26,6 +26,12 @@ public class ConsumoEntity {
     @Basic
     @Column(name = "estado", nullable = false, length = 15)
     private String estado;
+    @ManyToOne
+    @JoinColumn(name = "idreserva", referencedColumnName = "idreserva", nullable = false)
+    private ReservaEntity reservaByIdreserva;
+    @ManyToOne
+    @JoinColumn(name = "idproducto", referencedColumnName = "idproducto", nullable = false)
+    private ProductoEntity productoByIdproducto;
 
     public int getIdconsumo() {
         return idconsumo;
@@ -101,5 +107,21 @@ public class ConsumoEntity {
         result = 31 * result + (precioVenta != null ? precioVenta.hashCode() : 0);
         result = 31 * result + (estado != null ? estado.hashCode() : 0);
         return result;
+    }
+
+    public ReservaEntity getReservaByIdreserva() {
+        return reservaByIdreserva;
+    }
+
+    public void setReservaByIdreserva(ReservaEntity reservaByIdreserva) {
+        this.reservaByIdreserva = reservaByIdreserva;
+    }
+
+    public ProductoEntity getProductoByIdproducto() {
+        return productoByIdproducto;
+    }
+
+    public void setProductoByIdproducto(ProductoEntity productoByIdproducto) {
+        this.productoByIdproducto = productoByIdproducto;
     }
 }

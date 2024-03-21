@@ -33,6 +33,9 @@ public class PagoEntity {
     @Basic
     @Column(name = "fecha_pago", nullable = false)
     private Date fechaPago;
+    @ManyToOne
+    @JoinColumn(name = "idreserva", referencedColumnName = "idreserva", nullable = false)
+    private ReservaEntity reservaByIdreserva;
 
     public int getIdpago() {
         return idpago;
@@ -130,5 +133,13 @@ public class PagoEntity {
         result = 31 * result + (fechaEmision != null ? fechaEmision.hashCode() : 0);
         result = 31 * result + (fechaPago != null ? fechaPago.hashCode() : 0);
         return result;
+    }
+
+    public ReservaEntity getReservaByIdreserva() {
+        return reservaByIdreserva;
+    }
+
+    public void setReservaByIdreserva(ReservaEntity reservaByIdreserva) {
+        this.reservaByIdreserva = reservaByIdreserva;
     }
 }
