@@ -10,13 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e56a7c1-476f-4c88-bf3f-d58460ddf4fd" name="Changes" comment="Cambios">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/Menu_Principal.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/styleLogin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Login.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Login.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Registro.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Registro.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/styleform.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/styleform.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/styleLogin.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/styleLogin.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +193,7 @@
       <workItem from="1710625836564" duration="462000" />
       <workItem from="1710627421639" duration="2475000" />
       <workItem from="1711043915345" duration="20131000" />
-      <workItem from="1711119436920" duration="9405000" />
+      <workItem from="1711119436920" duration="9499000" />
     </task>
     <task id="LOCAL-00001" summary="Login">
       <option name="closed" value="true" />
@@ -305,7 +299,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711123755762</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Cambios">
+      <option name="closed" value="true" />
+      <created>1711144367811</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1711144367811</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
