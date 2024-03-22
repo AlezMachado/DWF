@@ -4,6 +4,8 @@
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
          version="5.0">
 
+<<<<<<< HEAD
+=======
     <servlet>
         <servlet-name>Faces Servlet</servlet-name>
         <servlet-class>jakarta.faces.webapp.FacesServlet</servlet-class>
@@ -17,4 +19,5 @@
         <welcome-file>faces/Login.xhtml</welcome-file>
     </welcome-file-list>
 
+>>>>>>> 98f9ed50bf6be1d8170c3a76ce8b35f4c351fd9b
 </web-app>
