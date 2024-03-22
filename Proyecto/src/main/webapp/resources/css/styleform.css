@@ -13,7 +13,10 @@ main {
     margin: auto;
     padding: 40px;
 }
-
+h2{
+    text-align: center;
+    font-size: 36px;
+}
 .formulario {
     display: grid;
     grid-template-columns: 1fr 1fr;
