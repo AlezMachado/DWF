@@ -9,10 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e56a7c1-476f-4c88-bf3f-d58460ddf4fd" name="Changes" comment="Mapeo BDD">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/Registro.xhtml" afterDir="false" />
+    <list default="true" id="9e56a7c1-476f-4c88-bf3f-d58460ddf4fd" name="Changes" comment="Login">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Login.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Login.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Registro.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Registro.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/StyleLogin.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/styleform.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -194,7 +194,7 @@
       <updated>1710625835332</updated>
       <workItem from="1710625836564" duration="462000" />
       <workItem from="1710627421639" duration="2475000" />
-      <workItem from="1711043915345" duration="14231000" />
+      <workItem from="1711043915345" duration="17920000" />
     </task>
     <task id="LOCAL-00001" summary="Login">
       <option name="closed" value="true" />
@@ -244,16 +244,24 @@
       <option name="project" value="LOCAL" />
       <updated>1711065503401</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Login">
+      <option name="closed" value="true" />
+      <created>1711066762868</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1711066762868</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Login" />
     <MESSAGE value="Mapeo BDD" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mapeo BDD" />
+    <MESSAGE value="Login" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
