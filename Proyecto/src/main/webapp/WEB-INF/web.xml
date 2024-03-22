@@ -17,6 +17,9 @@
     <welcome-file-list>
         <welcome-file>faces/Login.xhtml</welcome-file>
     </welcome-file-list>
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> be78d44f0456732791df11ce355916e5350563c4
 </web-app>
