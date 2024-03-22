@@ -3,6 +3,7 @@ package sv.edu.udb.www.entities;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
+import java.util.Collection;
 
 @Entity
 @Table(name = "habitacion", schema = "basereserva", catalog = "")
@@ -32,6 +33,8 @@ public class HabitacionEntity {
     @Basic
     @Column(name = "tipo_habitacion", nullable = false, length = 20)
     private String tipoHabitacion;
+    @OneToMany(mappedBy = "habitacionByIdhabitacion")
+    private Collection<ReservaEntity> reservasByIdhabitacion;
 
     public int getIdhabitacion() {
         return idhabitacion;
@@ -129,5 +132,13 @@ public class HabitacionEntity {
         result = 31 * result + (estado != null ? estado.hashCode() : 0);
         result = 31 * result + (tipoHabitacion != null ? tipoHabitacion.hashCode() : 0);
         return result;
+    }
+
+    public Collection<ReservaEntity> getReservasByIdhabitacion() {
+        return reservasByIdhabitacion;
+    }
+
+    public void setReservasByIdhabitacion(Collection<ReservaEntity> reservasByIdhabitacion) {
+        this.reservasByIdhabitacion = reservasByIdhabitacion;
     }
 }

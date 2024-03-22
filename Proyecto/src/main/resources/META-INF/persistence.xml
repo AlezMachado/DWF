@@ -13,6 +13,7 @@
         <class>sv.edu.udb.www.entities.ProductoEntity</class>
         <class>sv.edu.udb.www.entities.ReservaEntity</class>
         <class>sv.edu.udb.www.entities.TrabajadorEntity</class>
+        <class>sv.edu.udb.www.entities.UsersEntity</class>
         <properties>
             <property name="toplink.jdbc.url" value="jdbc:mysql://localhost:3306/basereserva?useSSL=false"/>
             <property name="toplink.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>

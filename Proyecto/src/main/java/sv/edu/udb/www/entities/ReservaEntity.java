@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.sql.Date;
+import java.util.Collection;
 
 @Entity
 @Table(name = "reserva", schema = "basereserva", catalog = "")
@@ -39,6 +40,19 @@ public class ReservaEntity {
     @Basic
     @Column(name = "estado", nullable = false, length = 15)
     private String estado;
+    @OneToMany(mappedBy = "reservaByIdreserva")
+    private Collection<ConsumoEntity> consumosByIdreserva;
+    @OneToMany(mappedBy = "reservaByIdreserva")
+    private Collection<PagoEntity> pagosByIdreserva;
+    @ManyToOne
+    @JoinColumn(name = "idhabitacion", referencedColumnName = "idhabitacion", nullable = false)
+    private HabitacionEntity habitacionByIdhabitacion;
+    @ManyToOne
+    @JoinColumn(name = "idcliente", referencedColumnName = "idpersona", nullable = false)
+    private ClienteEntity clienteByIdcliente;
+    @ManyToOne
+    @JoinColumn(name = "idtrabajador", referencedColumnName = "idpersona", nullable = false)
+    private TrabajadorEntity trabajadorByIdtrabajador;
 
     public int getIdreserva() {
         return idreserva;
@@ -155,5 +169,45 @@ public class ReservaEntity {
         result = 31 * result + (costoAlojamiento != null ? costoAlojamiento.hashCode() : 0);
         result = 31 * result + (estado != null ? estado.hashCode() : 0);
         return result;
+    }
+
+    public Collection<ConsumoEntity> getConsumosByIdreserva() {
+        return consumosByIdreserva;
+    }
+
+    public void setConsumosByIdreserva(Collection<ConsumoEntity> consumosByIdreserva) {
+        this.consumosByIdreserva = consumosByIdreserva;
+    }
+
+    public Collection<PagoEntity> getPagosByIdreserva() {
+        return pagosByIdreserva;
+    }
+
+    public void setPagosByIdreserva(Collection<PagoEntity> pagosByIdreserva) {
+        this.pagosByIdreserva = pagosByIdreserva;
+    }
+
+    public HabitacionEntity getHabitacionByIdhabitacion() {
+        return habitacionByIdhabitacion;
+    }
+
+    public void setHabitacionByIdhabitacion(HabitacionEntity habitacionByIdhabitacion) {
+        this.habitacionByIdhabitacion = habitacionByIdhabitacion;
+    }
+
+    public ClienteEntity getClienteByIdcliente() {
+        return clienteByIdcliente;
+    }
+
+    public void setClienteByIdcliente(ClienteEntity clienteByIdcliente) {
+        this.clienteByIdcliente = clienteByIdcliente;
+    }
+
+    public TrabajadorEntity getTrabajadorByIdtrabajador() {
+        return trabajadorByIdtrabajador;
+    }
+
+    public void setTrabajadorByIdtrabajador(TrabajadorEntity trabajadorByIdtrabajador) {
+        this.trabajadorByIdtrabajador = trabajadorByIdtrabajador;
     }
 }
