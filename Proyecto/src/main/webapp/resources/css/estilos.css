@@ -1,0 +1,19 @@
+
+.main-content .card {
+    margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    .main-content .col-md-3 {
+        flex: 0 0 25%;
+    }
+}
+.card {
+    background-color: #f8f9fa; /* Cambiar el color de fondo de las tarjetas */
+    border: 1px solid #dee2e6; /* Añadir un borde a las tarjetas */
+}
+
+.card-img-top {
+    object-fit: cover; /* Ajustar el tamaño de las imágenes para que cubran completamente el área */
+    height: 200px; /* Establecer una altura fija para las imágenes */
+}
