@@ -15,57 +15,49 @@
       xmlns:c="http://java.sun.com/jsp/jstl/core">
 
 <h:head>
-    <title>Login</title>
 
-    <h:outputStylesheet name="css/bootstrap.min.css" />
-    <h:outputStylesheet name="css/alertify.core.css" />
-    <h:outputStylesheet name="css/alertify.default.css" />
+
+    <link rel="stylesheet" href="resources/css/styleLogin.css"/>
     <h:outputScript name="js/alertify.js"/>
-    <link rel="stylesheet" href="resources/css/style.css"/>
+
+
+    <title>Bienvenido/as</title>
 </h:head>
 
 <h:body>
-
-
-    <div class="main">
-        <section class="sign-in">
-            <div class="container">
-                <div class="signin-content">
-                    <div class="signin-image">
-                <figure>
-                    <img src="resources/img/login.jpg" alt="sing up image"/>
-                </figure>
-                <a href="Registro.xhtml" class="signup-image-link">Crear un Nuevo Registro</a>
-            </div>
-
-            <div class="signin-form">
-                <h2 class="form-title">Login</h2>
-                <form method="" action="" class="register-form"
-                      id="login-form">
-                    <div class="form-group">
-                        <label for="username">
-                            <i class="zmdi zmdi-account material-icons-name"></i></label>
-                        <input type="text" name="username" id="username" placeholder="Nombre" />
-                    </div>
-                    <div class="form-group">
-                        <label for="password">
-                            <i class="zmdi zmdi-lock"></i></label>
-                        <input type="password" name="password" id="password" placeholder="Password" />
-                    </div>
-
-                    <div class="form-group form-button">
-                        <input type="submit" name="signin" id="signin"
-                               class="form-submit" value="Ingresar" />
-                    </div>
-                </form>
-                    </div>
-                </div>
-            </div>
-        </section>
+<div class="container-form sign-up">
+    <div class="welcome-back">
+        <div class="message">
+            <h2>Bienvenido/as</h2>
+            <p>Si ya tienes una cuenta por favor inicia sesion aqui</p>
+            <button class="sign-up-btn">Iniciar Sesion</button>
+        </div>
     </div>
-
-
-
+    <h:form class="formulario">
+        <h2 class="create-account">Crear una cuenta</h2>
+        <h:inputText id="nombre" styleClass="cuenta-gratis" value="Nombre"/>
+        <h:inputText id="email" styleClass="cuenta-gratis" value="Email"/>
+        <h:inputText id ="contraseña" styleClass="cuenta-gratis" value="Contraseña"/>
+        <input type="button" value="Registrarse"/>
+    </h:form>
+</div>
+<div class="container-form sign-in">
+    <h:form class="formulario">
+        <h2 class="create-account">Iniciar Sesion</h2>
+        <p class="cuenta-gratis">¿Aun no tienes una cuenta?</p>
+        <h:inputText id="email1" styleClass="cuenta-gratis" value="Email"/>
+        <h:inputText id ="contraseña1" styleClass="cuenta-gratis" value="Contraseña"/>
+        <input type="button" value="Iniciar Sesion"/>
+    </h:form>
+    <div class="welcome-back">
+        <div class="message">
+            <h2>Bienvenido de nuevo</h2>
+            <p>Si aun no tienes una cuenta por favor registrese aqui</p>
+            <button class="sign-in-btn">Registrarse</button>
+        </div>
+    </div>
+</div>
+<script src="resources/js/script.js"></script>
 </h:body>
 
 </html>

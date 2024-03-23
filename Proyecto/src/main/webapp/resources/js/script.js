@@ -27,3 +27,20 @@ $(document).ready(function () {
         $('#totalPrecio').text(total);
     }
 });
+
+$(document).ready(function() {
+    const $btnSignIn= $('.sign-in-btn');
+    const $btnSignUp = $('.sign-up-btn');
+    const $signUp = $('.sign-up');
+    const $signIn  = $('.sign-in');
+
+    $btnSignIn.on('click', function() {
+        $signIn.toggleClass('active');
+        $signUp.toggleClass('active');
+    });
+
+    $btnSignUp.on('click', function() {
+        $signIn.toggleClass('active');
+        $signUp.toggleClass('active');
+    });
+});

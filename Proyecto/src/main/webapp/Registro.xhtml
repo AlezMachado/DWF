@@ -10,10 +10,11 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 <h:head>
-    <title>Login</title>
+    <title>Registro de Clientes</title>
 
     <h:outputStylesheet name="css/bootstrap.min.css" />
     <h:outputStylesheet name="css/alertify.core.css" />
@@ -24,57 +25,62 @@
 
 <h:body>
 <div class="container">
-    <h2>Registro de Personas</h2>
-    <main>
-        <form action="" class="formulario" id="formulario">
+    <h2>Registro de Clientes</h2>
+
+        <h:form action="" class="formulario" id="formulario">
             <!-- Grupo: Nombre -->
             <div class="formulario__grupo" id="grupo__nombre">
-                <label for="nombre" class="formulario__label">Nombre</label>
+                <h:outputLabel for="nombre" styleClass="formulario__label" value="Nombres:"/>
                 <div class="formulario__grupo-input">
-                    <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Ingresa tu Nombre"/>
+                    <h:inputText id="nombre" styleClass="formulario__input" required="true"
+                                 requiredMessage="Debes ingresar el Nombre"/>
                 </div>
             </div>
 
             <!-- Grupo: Apellido -->
             <div class="formulario__grupo" id="grupo__apellido">
-                <label for="apellido" class="formulario__label">Primer Apellido</label>
+                <h:outputLabel for="apellido" styleClass="formulario__label" value="Apellido:"/>
                 <div class="formulario__grupo-input">
-                    <input type="text" class="formulario__input" name="apellido" id="apellido" placeholder="Ingresa tu primer Apellido"/>
-                </div>
+                    <h:inputText id="apellido" styleClass="formulario__input" required="true"
+                                 requiredMessage="Debes ingresar el Primer Apellido"/></div>
             </div>
 
             <!-- Grupo: Apellido2 -->
             <div class="formulario__grupo" id="grupo__apellido2">
-                <label for="apellido2" class="formulario__label">Segundo Apellido</label>
+                <h:outputLabel for="apellido2" styleClass="formulario__label" value="Apellido2:"/>
                 <div class="formulario__grupo-input">
-                    <input type="text" class="formulario__input" name="apellido2" id="apellido2" placeholder="Ingresa tu Segundo Apellido"/>
+                    <h:inputText id="apellido2" styleClass="formulario__input" required="true"
+                                 requiredMessage="Debes ingresar el Segundo Apellido"/>
+
                 </div>
             </div>
 
             <!-- Grupo: tipodocumento -->
             <div class="formulario__grupo" id="grupo__tipodocumento">
-                <label for="tipodocumento" class="formulario__label">Selecciona un tipo de Documento</label>
-                <select name="tipos" id="tip">
-                    <option value="dui">DUI</option>
-                    <option value="nit">NIT</option>
-                    <option value="pasaporte">Pasaporte</option>
-                    <option value="conducir">Licencia de Conducir</option>
-                </select>
+                <h:outputLabel for="tipos" value="Tipo de Documento"/>
+                <h:selectOneMenu id="tipos" styleClass="form-control">
+                    <f:selectItem itemValue="d" itemLabel="DUI"/>
+                    <f:selectItem itemValue="n" itemLabel="NIT"/>
+                    <f:selectItem itemValue="p" itemLabel="PASAPORTE"/>
+                    <f:selectItem itemValue="t" itemLabel="Targeta de Conducir"/>
+                </h:selectOneMenu>
             </div>
 
             <!-- Grupo: NumDocu -->
             <div class="formulario__grupo" id="grupo__numdocu">
-                <label for="numdocu" class="formulario__label">Número de Documento</label>
+                <h:outputLabel for="numdocu" styleClass="formulario__label" value="Numdocu:"/>
                 <div class="formulario__grupo-input">
-                    <input type="text" class="formulario__input" name="numdocu" id="numdocu" placeholder="Ingresa el Número del Documento"/>
+                    <h:inputText id="numdocu" styleClass="formulario__input" required="true"
+                                 requiredMessage="Ingresa el Número del Documento"/>
                 </div>
             </div>
 
             <!-- Grupo: Direccion -->
             <div class="formulario__grupo" id="grupo__direccion">
-                <label for="direccion" class="formulario__label">Dirección</label>
+                <h:outputLabel for="direccion" styleClass="formulario__label" value="Direccion:"/>
                 <div class="formulario__grupo-input">
-                    <input type="text" class="formulario__input" name="direccion" id="direccion" placeholder="Ingresa tu Dirección"/>
+                    <h:inputText id="direccion" styleClass="formulario__input" required="true"
+                                 requiredMessage="Ingresa tu Dirección"/>
                 </div>
             </div>
 
@@ -90,11 +96,12 @@
 
             <!-- Grupo: Teléfono -->
             <div class="formulario__grupo" id="grupo__telefono">
-                <label for="telefono" class="formulario__label">Ingresa tu Número Teléfonico</label>
+                <h:outputLabel for="numero" styleClass="formulario__label" value="Numero:"/>
                 <div class="formulario__grupo-input">
-                    <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="4491-2345"/>
+                    <h:inputText id="numero" styleClass="formulario__input" required="true"
+                                 requiredMessage="Ingresa tu Número Teléfonico"/>
                 </div>
-                <p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
+                <p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 8 dígitos.</p>
             </div>
 
             <div class="formulario__mensaje" id="formulario__mensaje">
@@ -105,8 +112,8 @@
                 <button type="submit" class="formulario__btn">Enviar</button>
                 <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Información ingresada exitosamente!</p>
             </div>
-        </form>
-    </main>
+        </h:form>
+
 </div>
 </h:body>
 
