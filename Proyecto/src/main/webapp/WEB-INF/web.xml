@@ -16,9 +16,9 @@
     </servlet-mapping>
     <welcome-file-list>
 
-        <welcome-file>faces/Productos.xhtml</welcome-file>
+        <welcome-file>faces/index.xhtml</welcome-file>
 
-        <welcome-file>faces/Registro.xhtml</welcome-file>
+
 
     </welcome-file-list>
 

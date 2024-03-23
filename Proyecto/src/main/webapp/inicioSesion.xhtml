@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio</title>
+    <h:outputStylesheet name="css/Registros.css"></h:outputStylesheet>
+</head>
+<body>
+<h:form styleClass="form-wrapper">
+    <div class="form-side">
+        <h:link outcome="index.xhtml" title="Logo">
+            <h:graphicImage styleClass="logo" library="img" name="hotel.png" alt="Logo" />
+        </h:link>
+        <h:panelGroup styleClass="my-form">
+            <div class="login-welcome-row">
+                <h1>¡Bienvenido!</h1>
+                <h2>¡Inicia sesión con tu cuenta!</h2>
+            </div>
+            <div class="socials-row">
+                <a href="#" title="Use Google">
+                    <h:graphicImage library="img" name="google.png" alt="Google" />
+                    Inicia con Google
+                </a>
+                <a href="#" title="Use Apple">
+                    <h:graphicImage library="img" name="apple.png" alt="Apple" />
+                    Inicia con Apple
+                </a>
+            </div>
+            <div class="divider">
+                <span class="divider-line"></span>
+                Or
+                <span class="divider-line"></span>
+            </div>
+            <div class="text-field">
+                <h:outputLabel for="email" value="Email:" />
+                <h:inputText id="email" value="#{bean.email}" required="true" placeholder="Correo" />
+            </div>
+            <div class="text-field">
+                <h:outputLabel for="password" value="Contraseña:" />
+                <h:inputSecret id="password" value="#{bean.password}" required="true" placeholder="Contraseña" />
+            </div>
+            <h:commandButton action="inicio.xhtml" styleClass="my-form__button" value="Iniciar Sesión" />
+            <div class="my-form__actions">
+                <div class="my-form__row">
+                    <span>¿No tienes una cuenta?</span>
+                    <h:link outcome="registrarse.xhtml" title="Registrarse">
+                        Regístrate
+                    </h:link>
+                </div>
+                <div class="my-form__signup">
+                    <h:link outcome="index.xhtml" title="Login">
+                        Volver
+                    </h:link>
+                </div>
+            </div>
+        </h:panelGroup>
+    </div>
+    <div class="info-side">
+        <h:graphicImage library="img" name="iniciosesion.jpg" alt="" />
+    </div>
+</h:form>
+</body>
+</html>
