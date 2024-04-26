@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<h:head>
+    <title>Registro de Clientes</title>
+    <h:outputStylesheet name="css/inicio.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+
+</h:head>
+<h:body>
+    <h:form>
+        <header id="Inicio">
+            <div class="header-content">
+               <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                   <a class="navbar-brand" href="#">Hotel Intercontinental</a>
+                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                       <ul class="navbar-nav mr-auto">
+                           <li class="nav-item active">
+                               <a class="nav-link" href="inicio.xhtml">Inicio</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link" href="habitaciones.xhtml">Suites</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link" href="promociones.xhtml">Promociones</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link" href="reservaciones.xhtml">Reservaciones</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link" href="servicios.xhtml">Servicios</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link" href="soporte.xhtml">Soporte en Línea</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link" href="index.xhtml">Cerrar Sesión</a>
+                           </li>
+                       </ul>
+                   </div>
+               </nav>
+            </div>
+        </header>
+
+        <div class="container mt-5">
+            <div class="card mb-5">
+                <div class="card-header">
+                    <h5 class="card-title">Datos del Cliente</h5>
+                </div>
+                <div class="card-body">
+                    <h:form>
+                        <!-- Grupo: Nombre -->
+                        <div class="formulario__grupo" id="grupo__nombre">
+                            <div class="col">
+                            <h:outputLabel for="nombre" styleClass="formulario__label" value="Nombres:"/>
+                            <div class="formulario__grupo-input">
+                                <h:inputText id="nombre" styleClass="form-control" required="true"
+                                             requiredMessage="Debes ingresar el Nombre"/>
+                            </div>
+                            </div>
+                        </div>
+
+                        <!-- Grupo: Apellido -->
+                        <div class="formulario__grupo" id="grupo__apellido">
+                            <div class="col">
+                                <h:outputLabel for="apellido" styleClass="formulario__label" value="Primer Apellido:"/>
+                                     <div class="formulario__grupo-input">
+                                <h:inputText id="apellido" styleClass="form-control" required="true"
+                                             requiredMessage="Debes ingresar el Primer Apellido"/>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <!-- Grupo: Apellido2 -->
+                        <div class="formulario__grupo" id="grupo__apellido2">
+                            <div class="col">
+                                <h:outputLabel for="apellido2" styleClass="formulario__label" value="Segundo Apellido:"/>
+                                <div class="formulario__grupo-input">
+                                    <h:inputText id="apellido2" styleClass="form-control" required="true"
+                                                 requiredMessage="Debes ingresar el Segundo Apellido"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Grupo: tipodocumento -->
+                        <div class="formulario__grupo" id="grupo__tipodocumento">
+                            <div class="col">
+                                <h:outputLabel for="tipos" value="Tipo de Documento"/>
+                                <h:selectOneMenu id="tipos" styleClass="form-control">
+                                    <f:selectItem itemValue="d" itemLabel="DUI"/>
+                                    <f:selectItem itemValue="n" itemLabel="NIT"/>
+                                    <f:selectItem itemValue="p" itemLabel="PASAPORTE"/>
+                                    <f:selectItem itemValue="t" itemLabel="Targeta de Conducir"/>
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+
+                        <!-- Grupo: NumDocu -->
+                        <div class="formulario__grupo" id="grupo__numdocu">
+                            <div class="col">
+                                <h:outputLabel for="numdocu" styleClass="formulario__label" value="Número de Documento:"/>
+                                <div class="formulario__grupo-input">
+                                    <h:inputText id="numdocu" styleClass="formulario__input" required="true"
+                                                 requiredMessage="Ingresa el Número del Documento"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Grupo: Direccion -->
+                        <div class="formulario__grupo" id="grupo__direccion">
+                            <div class="col">
+                                <h:outputLabel for="direccion" styleClass="formulario__label" value="Direccion:"/>
+                                <div class="formulario__grupo-input">
+                                    <h:inputText id="direccion" styleClass="form-control" required="true"
+                                                 requiredMessage="Ingresa tu Dirección"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Grupo: Correo Electronico -->
+                        <div class="formulario__grupo" id="grupo__correo">
+                            <div class="col">
+                                <h:outputLabel for="correo" styleClass="formulario__label" value="Correo Electrónico:"/>
+                                <div class="formulario__grupo-input">
+                                    <input type="email" class="form-control" name="correo" id="correo" placeholder="correo@correo.com"/>
+                                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Grupo: Teléfono -->
+                        <div class="formulario__grupo" id="grupo__telefono">
+                            <div class="col">
+                                <h:outputLabel for="numero" styleClass="formulario__label" value="Numero Telefonico:"/>
+                                <div class="formulario__grupo-input">
+                                    <h:inputText id="numero" styleClass="formulario__input" required="true"
+                                                 requiredMessage="Ingresa tu Número Teléfonico"/>
+                                </div>
+                            </div>
+                        </div>
+
+                    </h:form>
+
+
+                    <div class="formulario__grupo formulario__grupo-btn-enviar">
+                        <button type="submit" class="formulario__btn">Enviar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-5">
+            <p>&copy; 2024 Hotel Intercontinental. Todos los derechos reservados.</p>
+            <p>Para más información, visita nuestro sitio web: <a href="https://www.hotelintercontinental.com">www.hotelintercontinental.com</a></p>
+        </footer>
+
+    </h:form>
+
+</h:body>
+</html>
