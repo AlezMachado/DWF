@@ -7,6 +7,10 @@ import java.util.Collection;
 
 @Entity
 @Table(name = "habitacion", schema = "basereserva", catalog = "")
+@NamedQueries({
+        @NamedQuery(name = "HabitacionEntity.findAll", query = "SELECT e FROM HabitacionEntity e "),
+        @NamedQuery(name = "HabitacionEntity.findById", query = "SELECT e FROM HabitacionEntity e WHERE e.idhabitacion = :idhabitacion")})
+
 public class HabitacionEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id

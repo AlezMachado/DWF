@@ -6,6 +6,10 @@ import java.math.BigDecimal;
 
 @Entity
 @Table(name = "consumo", schema = "basereserva", catalog = "")
+@NamedQueries({
+        @NamedQuery(name = "ConsumoEntity.findAll", query = "SELECT e FROM ConsumoEntity e "),
+        @NamedQuery(name = "ConsumoEntity.findById", query = "SELECT e FROM ConsumoEntity e WHERE e.idconsumo = :idconsumo")})
+
 public class ConsumoEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id

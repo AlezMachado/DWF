@@ -7,6 +7,10 @@ import java.sql.Date;
 
 @Entity
 @Table(name = "pago", schema = "basereserva", catalog = "")
+@NamedQueries({
+        @NamedQuery(name = "PagoEntity.findAll", query = "SELECT e FROM PagoEntity e "),
+        @NamedQuery(name = "PagoEntity.findById", query = "SELECT e FROM PagoEntity e WHERE e.idpago = :idpago")})
+
 public class PagoEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id

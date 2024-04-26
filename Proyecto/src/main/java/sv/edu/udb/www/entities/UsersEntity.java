@@ -4,6 +4,10 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "users", schema = "basereserva", catalog = "")
+@NamedQueries({
+        @NamedQuery(name = "UsersEntity.findAll", query = "SELECT e FROM UsersEntity e "),
+        @NamedQuery(name = "UsersEntity.findById", query = "SELECT e FROM UsersEntity e WHERE e.idusers = :Idusers")})
+
 public class UsersEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
