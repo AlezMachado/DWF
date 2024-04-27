@@ -16,7 +16,7 @@
     </servlet-mapping>
     <welcome-file-list>
 
-        <welcome-file>faces/clientes/index.xhtml</welcome-file>
+        <welcome-file>faces/IndexCliente.xhtml</welcome-file>
 
 
 
