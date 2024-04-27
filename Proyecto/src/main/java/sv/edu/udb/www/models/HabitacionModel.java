@@ -10,31 +10,33 @@ import java.util.List;
 
 public class HabitacionModel {
     public List<HabitacionEntity> listarhabitaciones(){
-
         EntityManager em = JpaUtil.getEntityManager();
-        try{
-
+        try {
             Query consulta = em.createNamedQuery("HabitacionEntity.findAll");
             List<HabitacionEntity> lista = consulta.getResultList();
-            em.close();
             return lista;
-        }catch (Exception e){
-            em.close();
+        } catch (Exception e) {
+
             return null;
+        } finally {
+            em.close();
         }
     }
 
-    public HabitacionEntity obtenerhabitacion(int idhabitacion){
+
+    public HabitacionEntity obtenerhabitacion(int idhabitacion) {
         EntityManager em = JpaUtil.getEntityManager();
-        try{
+        try {
             HabitacionEntity habitacion = em.find(HabitacionEntity.class, idhabitacion);
-            em.close();
-            return  habitacion;
-        }catch (Exception e){
-            em.close();
+            return habitacion;
+        } catch (Exception e) {
+
             return null;
+        } finally {
+            em.close();
         }
     }
+
     public int insertarhabitacion(HabitacionEntity habitacion){
         EntityManager em = JpaUtil.getEntityManager();
         EntityTransaction tran = em.getTransaction();
@@ -65,11 +67,11 @@ public class HabitacionModel {
             return 0;
         }
     }
-    public int eliminarHabitacion(int Habitacion){
+    public int eliminarHabitacion(int idhabitacion){
         EntityManager em = JpaUtil.getEntityManager();
         int filasBorradas = 0;
         try{
-            HabitacionEntity habitacion = em.find(HabitacionEntity.class, Habitacion);
+            HabitacionEntity habitacion = em.find(HabitacionEntity.class, idhabitacion);
             if(habitacion !=null){
                 EntityTransaction tran = em.getTransaction();
                 tran.begin();
