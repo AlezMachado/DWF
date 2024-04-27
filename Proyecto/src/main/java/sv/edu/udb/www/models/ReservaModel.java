@@ -65,11 +65,11 @@ public class ReservaModel {
             return 0;
         }
     }
-    public int eliminarReserva(int Reserva){
+    public int eliminarReserva(int idreserva){
         EntityManager em = JpaUtil.getEntityManager();
         int filasBorradas = 0;
         try{
-            ReservaEntity reserva = em.find(ReservaEntity.class, Reserva);
+            ReservaEntity reserva = em.find(ReservaEntity.class, idreserva);
             if(reserva !=null){
                 EntityTransaction tran = em.getTransaction();
                 tran.begin();

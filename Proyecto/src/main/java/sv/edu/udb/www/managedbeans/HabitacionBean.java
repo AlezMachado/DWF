@@ -48,8 +48,8 @@ public class HabitacionBean {
         this.Habitacion = modelHabitacion.listarhabitaciones();
     }
 
-    public void cargarHabitacion(HabitacionEntity habitacion){
-this.habitacion = habitacion;
+    public void cargarHabitacion(HabitacionEntity habitacion) {
+        this.habitacion = habitacion;
 
     }
 }
