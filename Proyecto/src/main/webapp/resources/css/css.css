@@ -74,7 +74,7 @@ header {
 }
 
 .menu-item:hover .menu-link {
-    color: #6c5656; /* Cambiar el color del enlace cuando se hace hover */
+    color: transparent; /* Cambiar el color del enlace cuando se hace hover */
 }
 
 .menu-item:hover {
