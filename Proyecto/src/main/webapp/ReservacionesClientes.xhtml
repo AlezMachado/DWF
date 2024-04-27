@@ -9,7 +9,7 @@
       xmlns:c="http://java.sun.com/jsp/jstl/core">
 
 <h:head>
-    <title>Registro de Clientes</title>
+    <title>Hotel Intercontinental</title>
     <h:outputStylesheet name="css/inicio.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
 
@@ -18,52 +18,50 @@
     <h:form>
         <header id="Inicio">
             <div class="header-content">
-               <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                   <a class="navbar-brand" href="#">Hotel Intercontinental</a>
-                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                       <ul class="navbar-nav mr-auto">
-                           <li class="nav-item active">
-                               <a class="nav-link" href="inicio.xhtml">Inicio</a>
-                           </li>
-                           <li class="nav-item">
-                               <a class="nav-link" href="habitaciones.xhtml">Suites</a>
-                           </li>
-                           <li class="nav-item">
-                               <a class="nav-link" href="promociones.xhtml">Promociones</a>
-                           </li>
-                           <li class="nav-item">
-                               <a class="nav-link" href="reservaciones.xhtml">Reservaciones</a>
-                           </li>
-                           <li class="nav-item">
-                               <a class="nav-link" href="servicios.xhtml">Servicios</a>
-                           </li>
-                           <li class="nav-item">
-                               <a class="nav-link" href="soporte.xhtml">Soporte en Línea</a>
-                           </li>
-                           <li class="nav-item">
-                               <a class="nav-link" href="index.xhtml">Cerrar Sesión</a>
-                           </li>
-                       </ul>
-                   </div>
-               </nav>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="#">Hotel Intercontinental</a>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="InicioClientes.xhtml">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="HabitacionesClientes.xhtml">Suites</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="PromocionesClientes.xhtml">Promociones</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="ReservacionesClientes.xhtml">Reservaciones</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="ServiciosClientes.xhtml">Servicios</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="SoporteClientes.xhtml">Soporte en Línea</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="IndexCliente.xhtml">Cerrar Sesión</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
         </header>
+
+        <!-- CONTENEDOR PRINCIPAL-->
 
         <div class="container mt-5">
             <div class="card mb-5">
                 <div class="card-header">
-                    <h5 class="card-title">Datos del Cliente</h5>
+                    <h5 class="card-title">Reservar Habitación</h5>
                 </div>
                 <div class="card-body">
                     <h:form>
-                        <!-- Grupo: Nombre -->
+                        <!-- Grupo: CLIENTE-->
                         <div class="formulario__grupo" id="grupo__nombre">
                             <div class="col">
-                            <h:outputLabel for="nombre" styleClass="formulario__label" value="Nombres:"/>
-                            <div class="formulario__grupo-input">
-                                <h:inputText id="nombre" styleClass="form-control" required="true"
-                                             requiredMessage="Debes ingresar el Nombre"/>
-                            </div>
+
                             </div>
                         </div>
 
@@ -71,10 +69,10 @@
                         <div class="formulario__grupo" id="grupo__apellido">
                             <div class="col">
                                 <h:outputLabel for="apellido" styleClass="formulario__label" value="Primer Apellido:"/>
-                                     <div class="formulario__grupo-input">
-                                <h:inputText id="apellido" styleClass="form-control" required="true"
-                                             requiredMessage="Debes ingresar el Primer Apellido"/>
-                                    </div>
+                                <div class="formulario__grupo-input">
+                                    <h:inputText id="apellido" styleClass="form-control" required="true"
+                                                 requiredMessage="Debes ingresar el Primer Apellido"/>
+                                </div>
                             </div>
                         </div>
 
@@ -148,7 +146,7 @@
 
                         <br>
                             <div class="col">
-                            <button type="submit" class = "btn btn-primary">Enviar</button>
+                                <button type="submit" class = "btn btn-primary">Enviar</button>
                             </div>
                         </br>
 
