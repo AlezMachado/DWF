@@ -1,11 +1,151 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
-    <h:outputLabel value="Hello, world"/>
-</f:view>
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<h:head>
+    <title>Hotel Intercontinental</title>
+    <h:outputStylesheet name="css/inicio.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+
+</h:head>
+<h:body>
+    <h:form>
+        <header id="Inicio">
+            <div class="header-content">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="#">Hotel Intercontinental</a>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="inicio.xhtml">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="habitaciones.xhtml">Suites</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="promociones.xhtml">Promociones</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="reservaciones.xhtml">Reservaciones</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="servicios.xhtml">Servicios</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="soporte.xhtml">Soporte en Línea</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.xhtml">Cerrar Sesión</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- CONTENEDOR PRINCIPAL-->
+
+        <div class="container mt-5">
+
+            <!--BIENVENIDA-->
+            <div class="row">
+                <div class="col">
+                    <h1>¡Bienvenido al Hotel Intercontinental</h1>
+                    <hr/>
+                    <p>Sumérgete en la comodidad y el lujo en nuestro oasis urbano.
+                        Ubicado en el corazón de la ciudad, nuestro hotel ofrece una experiencia inolvidable para todos nuestros huéspedes.
+                        Desde la elegante arquitectura hasta el impecable servicio, cada detalle ha sido diseñado para garantizar una estancia excepcional.</p>
+                </div>
+            </div>
+
+            <!--HABITACIONES-->
+            <div class="row">
+                <div class="col" id="habitaciones">
+                    <h3>Habitaciones</h3>
+                    <hr/>
+                    <div class="promos row">
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <h:graphicImage value="img/habitacion02.webp" styleClass="card-img-top" alt="Habitacion Classic" />
+                                <div class="card-body">
+                                    <h5 class="card-title">Habitación Classic</h5>
+                                    <p class="card-text"><b>Tamaño de la habitación</b> 30 sq. m. - 30 sq. m.<br/>
+                                    <b>Camas:</b> 1 King Bed<br/>
+                                    <b>Incluye:</b> Lounge Access</p>
+                                    <p class="card-text"><strong>Precio:</strong> $200/noche</p>
+                                    <a href="reservaciones.xhtml" class="btn btn-primary">Reservar</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <h:graphicImage value="img/habitacion02.webp" styleClass="card-img-top" alt="Habitacion Deluxe Doble" />
+                                <div class="card-body">
+                                    <h5 class="card-title">Habitación Deluxe Doble</h5>
+                                    <p class="card-text"><b>Tamaño de la habitación:</b> 50 sq. m. – 50 sq. m.<br/>
+                                        <b>Camas:</b> 2 Double Beds, o 1 King Bed<br/>
+                                        <b>Incluye:</b> Lounge Access</p>
+                                    <p class="card-text"><strong>Precio:</strong> $250/noche</p>
+                                    <a href="reservaciones.xhtml" class="btn btn-primary">Reservar</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- SUITES -->
+            <div class="row">
+                <div class="col" id="Suites">
+                    <h3>Suites</h3>
+                    <hr/>
+                    <div class="promos row">
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <h:graphicImage value="img/habitacion03.webp" styleClass="card-img-top" alt="Suite 1" />
+                                <div class="card-body">
+                                    <h5 class="card-title">Suite 1</h5>
+                                    <p class="card-text"><b>Tamaño de la habitación:</b> 90 sq. m. – 90 sq. m.<br/>
+                                        <b>Camas:</b> 2 King Bed<br/>
+                                        <b>Incluye:</b> Lounge Access</p>
+                                    <p class="card-text"><strong>Precio:</strong> $400/noche</p>
+                                    <a href="reservaciones.xhtml" class="btn btn-primary">Reservar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <h:graphicImage value="img/habitacion04.webp" styleClass="card-img-top" alt="Junior Suite" />
+                                <div class="card-body">
+                                    <h5 class="card-title">Junior Suite</h5>
+                                    <p class="card-text"><b>Tamaño de la habitación:</b> 60 sq. m. – 60 sq. m.<br/>
+                                        <b>Camas:</b> 1 King Bed<br/>
+                                        <b>Incluye:</b> Lounge Access</p>
+                                    <p class="card-text"><strong>Precio:</strong> $300/noche</p>
+                                    <a href="reservaciones.xhtml" class="btn btn-primary">Reservar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-5">
+            <p>&copy; 2024 Hotel Intercontinental. Todos los derechos reservados.</p>
+            <p>Para más información, visita nuestro sitio web: <a href="https://www.hotelintercontinental.com">www.hotelintercontinental.com</a></p>
+        </footer>
+
+    </h:form>
+
+</h:body>
 </html>
