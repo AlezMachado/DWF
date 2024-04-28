@@ -1,7 +1,5 @@
 package sv.edu.udb.www.managedbeans;
 
-import sv.edu.udb.www.entities.ClienteEntity;
-import sv.edu.udb.www.entities.HabitacionEntity;
 import sv.edu.udb.www.models.ClienteModel;
 
 import java.util.List;

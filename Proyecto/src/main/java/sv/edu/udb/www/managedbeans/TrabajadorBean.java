@@ -1,11 +1,7 @@
 package sv.edu.udb.www.managedbeans;
 
-import org.w3c.dom.stylesheets.LinkStyle;
-import sv.edu.udb.www.entities.ClienteEntity;
-import sv.edu.udb.www.entities.TrabajadorEntity;
 import sv.edu.udb.www.models.TrabajadorModel;
 
-import java.awt.datatransfer.Transferable;
 import java.util.List;
 
 public class TrabajadorBean {

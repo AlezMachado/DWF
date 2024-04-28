@@ -1,9 +1,5 @@
 package sv.edu.udb.www.managedbeans;
 
-import sv.edu.udb.www.entities.ClienteEntity;
-import sv.edu.udb.www.entities.HabitacionEntity;
-import sv.edu.udb.www.entities.ReservaEntity;
-import sv.edu.udb.www.entities.TrabajadorEntity;
 import sv.edu.udb.www.models.ClienteModel;
 import sv.edu.udb.www.models.HabitacionModel;
 import sv.edu.udb.www.models.ReservaModel;

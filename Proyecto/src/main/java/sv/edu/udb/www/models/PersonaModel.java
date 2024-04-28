@@ -3,7 +3,6 @@ import java.util.List;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Query;
-import sv.edu.udb.www.entities.PersonaEntity;
 
 import sv.edu.udb.www.utils.JpaUtil;
 

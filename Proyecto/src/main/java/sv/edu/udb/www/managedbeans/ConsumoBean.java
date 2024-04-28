@@ -1,8 +1,5 @@
 package sv.edu.udb.www.managedbeans;
 
-import sv.edu.udb.www.entities.ConsumoEntity;
-import sv.edu.udb.www.entities.ProductoEntity;
-import sv.edu.udb.www.entities.ReservaEntity;
 import sv.edu.udb.www.models.ConsumoModel;
 import sv.edu.udb.www.models.ProductoModel;
 import sv.edu.udb.www.models.ReservaModel;

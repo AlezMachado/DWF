@@ -1,7 +1,5 @@
 package sv.edu.udb.www.managedbeans;
 
-import sv.edu.udb.www.entities.ProductoEntity;
-import sv.edu.udb.www.entities.TrabajadorEntity;
 import sv.edu.udb.www.models.ProductoModel;
 
 import java.util.List;

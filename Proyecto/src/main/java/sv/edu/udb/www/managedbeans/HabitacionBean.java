@@ -1,6 +1,5 @@
 package sv.edu.udb.www.managedbeans;
 
-import sv.edu.udb.www.entities.HabitacionEntity;
 import sv.edu.udb.www.models.HabitacionModel;
 
 import java.util.List;

@@ -1,7 +1,5 @@
 package sv.edu.udb.www.managedbeans;
 
-import sv.edu.udb.www.entities.PagoEntity;
-import sv.edu.udb.www.entities.ReservaEntity;
 import sv.edu.udb.www.models.PagoModel;
 import sv.edu.udb.www.models.ReservaModel;
 
