@@ -23,25 +23,22 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="InicioClientes.xhtml">Inicio</a>
+                                <a class="nav-link" href="faces/IndexCliente.xhtml">Inicio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="HabitacionesClientes.xhtml">Suites</a>
+                                <a class="nav-link" href="faces/HabitacionesClientes.xhtml">Suites</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="PromocionesClientes.xhtml">Promociones</a>
+                                <a class="nav-link" href="faces/ReservacionesClientes.xhtml">Reservaciones</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="ReservacionesClientes.xhtml">Reservaciones</a>
+                                <a class="nav-link" href="faces/ServiciosClientes.xhtml">Servicios</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="ServiciosClientes.xhtml">Servicios</a>
+                                <a class="nav-link" href="faces/SoporteClientes.xhtml">Soporte en Línea</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="SoporteClientes.xhtml">Soporte en Línea</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="IndexCliente.xhtml">Cerrar Sesión</a>
+                                <a class="nav-link" href="faces/Index.xhtml">Cerrar Sesión</a>
                             </li>
                         </ul>
                     </div>
@@ -61,55 +58,73 @@
                         <!-- Grupo: CLIENTE-->
                         <div class="formulario__grupo" id="grupo__nombre">
                             <div class="col">
+                                <h:outputLabel for="clientForm:nombr" value="Nombre del Cliente"></h:outputLabel>
+                                <br/>
+                                <h:selectOneMenu >
+                                    <f:selectItems />
+                                </h:selectOneMenu>
 
                             </div>
                         </div>
 
-                        <!-- Grupo: Apellido -->
+                        <!-- Grupo: HABITACIÓN -->
                         <div class="formulario__grupo" id="grupo__apellido">
                             <div class="col">
-                                <h:outputLabel for="apellido" styleClass="formulario__label" value="Primer Apellido:"/>
-                                <div class="formulario__grupo-input">
-                                    <h:inputText id="apellido" styleClass="form-control" required="true"
-                                                 requiredMessage="Debes ingresar el Primer Apellido"/>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Grupo: Apellido2 -->
-                        <div class="formulario__grupo" id="grupo__apellido2">
-                            <div class="col">
-                                <h:outputLabel for="apellido2" styleClass="formulario__label" value="Segundo Apellido:"/>
-                                <div class="formulario__grupo-input">
-                                    <h:inputText id="apellido2" styleClass="form-control" required="true"
-                                                 requiredMessage="Debes ingresar el Segundo Apellido"/>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Grupo: tipodocumento -->
-                        <div class="formulario__grupo" id="grupo__tipodocumento">
-                            <div class="col">
-                                <h:outputLabel for="tipos" value="Tipo de Documento"/>
-                                <h:selectOneMenu id="tipos" styleClass="form-control">
-                                    <f:selectItem itemValue="d" itemLabel="DUI"/>
-                                    <f:selectItem itemValue="n" itemLabel="NIT"/>
-                                    <f:selectItem itemValue="p" itemLabel="PASAPORTE"/>
-                                    <f:selectItem itemValue="t" itemLabel="Targeta de Conducir"/>
+                                <h:outputLabel for="clientForm:habit" value="Número de Habitación"></h:outputLabel>
+                                <br/>
+                                <h:selectOneMenu >
+                                    <f:selectItems />
                                 </h:selectOneMenu>
                             </div>
                         </div>
 
-                        <!-- Grupo: NumDocu -->
-                        <div class="formulario__grupo" id="grupo__numdocu">
+                        <!-- Grupo: TIPO DE RESERVA -->
+                        <div class="formulario__grupo" id="grupo__reserva">
                             <div class="col">
-                                <h:outputLabel for="numdocu" styleClass="formulario__label" value="Número de Documento:"/>
+                                <h:outputLabel for="tiposreser" value="Tipo de Reserva"/>
+                                <h:selectOneMenu id="tiposreser" styleClass="form-control">
+                                    <f:selectItem itemValue="t" itemLabel="Reservación Tentativa"/>
+                                    <f:selectItem itemValue="l" itemLabel="Reservación Limite"/>
+                                    <f:selectItem itemValue="g" itemLabel="Reservación Garantizada"/>
+                                    <f:selectItem itemValue="gr" itemLabel="Reservación de Grupos"/>
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+
+                        <!-- Grupo: FECHA DE RESERVA -->
+                        <div class="formulario__grupo" id="grupo__fechreserva">
+                            <div class="col">
+                                <h:outputLabel for="fechreserva" styleClass="formulario__label" value="Fecha de Reserva:"/>
                                 <div class="formulario__grupo-input">
-                                    <h:inputText id="numdocu" styleClass="formulario__input" required="true"
-                                                 requiredMessage="Ingresa el Número del Documento"/>
+                                    <h:inputText id="fechreserva" styleClass="formulario__input" required="true"
+                                                 requiredMessage="Ingresa la Fecha de Reservación"/>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Grupo: FECHA DE INGRESO -->
+                        <div class="formulario__grupo" id="grupo__fechingreso">
+                            <div class="col">
+                                <h:outputLabel for="fechingreso" styleClass="formulario__label" value="Fecha de Ingreso:"/>
+                                <div class="formulario__grupo-input">
+                                    <h:inputText id="fechingreso" styleClass="formulario__input" required="true"
+                                                 requiredMessage="Ingresa la Fecha de Ingreso"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Grupo: FECHA DE SALIDA -->
+                        <div class="formulario__grupo" id="grupo__fechsalida">
+                            <div class="col">
+                                <h:outputLabel for="fechsalida" styleClass="formulario__label" value="Fecha de Salida:"/>
+                                <div class="formulario__grupo-input">
+                                    <h:inputText id="fechsalida" styleClass="formulario__input" required="true"
+                                                 requiredMessage="Ingresa la Fecha de Salida"/>
+                                </div>
+                            </div>
+                        </div>
+
+
 
                         <!-- Grupo: Direccion -->
                         <div class="formulario__grupo" id="grupo__direccion">
@@ -122,27 +137,16 @@
                             </div>
                         </div>
 
-                        <!-- Grupo: Correo Electronico -->
-                        <div class="formulario__grupo" id="grupo__correo">
+                        <!-- Grupo: COSTO ALOJAMIENTO
+                        <div class="formulario__grupo" id="grupo__alojamiento">
                             <div class="col">
-                                <h:outputLabel for="correo" styleClass="formulario__label" value="Correo Electrónico:"/>
+                                <h:outputLabel for="alojamiento" styleClass="formulario__label" value="Costo de Alojamiento:"/>
                                 <div class="formulario__grupo-input">
-                                    <input type="email" class="form-control" name="correo" id="correo" placeholder="correo@correo.com"/>
-                                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                    <h:inputText id="alojamiento" styleClass="formulario__input" required="true"
+                                                 requiredMessage="Ingresa el Costo de Alojamiento"/>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- Grupo: Teléfono -->
-                        <div class="formulario__grupo" id="grupo__telefono">
-                            <div class="col">
-                                <h:outputLabel for="numero" styleClass="formulario__label" value="Numero Telefonico:"/>
-                                <div class="formulario__grupo-input">
-                                    <h:inputText id="numero" styleClass="formulario__input" required="true"
-                                                 requiredMessage="Ingresa tu Número Teléfonico"/>
-                                </div>
-                            </div>
-                        </div>
+                        </div>-->
 
                         <br>
                             <div class="col">
