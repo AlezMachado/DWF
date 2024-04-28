@@ -14,8 +14,15 @@
         <class>sv.edu.udb.www.entities.ReservaEntity</class>
         <class>sv.edu.udb.www.entities.TrabajadorEntity</class>
         <class>sv.edu.udb.www.entities.UsersEntity</class>
+        <class>sv.edu.udb.www.entities.Cliente</class>
+        <class>sv.edu.udb.www.entities.Consumo</class>
+        <class>sv.edu.udb.www.entities.Habitacion</class>
+        <class>sv.edu.udb.www.entities.Pago</class>
+        <class>sv.edu.udb.www.entities.Productos</class>
+        <class>sv.edu.udb.www.entities.Reserva</class>
+        <class>sv.edu.udb.www.entities.Trabajador</class>
         <properties>
-            <property name="toplink.jdbc.url" value="jdbc:mysql://localhost:3306/basereserva?useSSL=false"/>
+            <property name="toplink.jdbc.url" value="jdbc:mysql://localhost:3306/bdhotel?useSSL=false"/>
             <property name="toplink.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
             <property name="toplink.jdbc.user" value="root"/>
             <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/basereserva?useSSL=false"/>
