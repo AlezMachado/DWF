@@ -9,7 +9,7 @@
       xmlns:c="http://java.sun.com/jsp/jstl/core">
 <h:head>
     <title>Registro de Clientes</title>
-    <h:outputStylesheet name="css/inicio.css"/>
+    <h:outputStylesheet name="css/InicioAdmin.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
 </h:head>
 <h:body>
@@ -132,11 +132,11 @@
                                 </div>
                             </div>
                         </div>
-                        <br>
-                            <div class="col">
-                            <button type="submit" class = "btn btn-primary">Enviar</button>
-                            </div>
-                        </br>
+                        <td>
+                            <h:commandButton value="Agregar" action="#" styleClass="btn btn-primary center-block">
+                                <f:ajax execute="@form" render="" resetValues="true"/>
+                            </h:commandButton>
+                        </td>
                     </h:form>
                 </div>
             </div>

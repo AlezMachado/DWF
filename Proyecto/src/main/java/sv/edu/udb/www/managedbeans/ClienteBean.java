@@ -8,6 +8,7 @@ public class ClienteBean {
 
     ClienteModel modelCliente = new ClienteModel();
 
+
     private List<ClienteEntity> Cliente;
 
     private ClienteEntity cliente;

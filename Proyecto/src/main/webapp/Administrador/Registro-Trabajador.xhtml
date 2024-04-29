@@ -4,8 +4,163 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
-    <h:outputLabel value="Hello, world"/>
-</f:view>
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+
+<h:head>
+    <title>Administración Hotel Intercontinental</title>
+    <h:outputStylesheet name="css/InicioAdmin.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+</h:head>
+<h:body>
+    <h:form>
+        <header id="Inicio">
+            <div class="header-content">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="#">Administración Hotel Intercontinental</a>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="Registro-Personas.xhtml">Registro de Clientes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Registro-Habitación.xhtml">Registro de Habitaciones</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Registro-Reservas.xhtml">Registro de Reservas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Registro-Productos.xhtml">Registro de Productos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Registro-Trabajador.xhtml">Registro de Personal</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="faces/Index.xhtml">Cerrar Sesión</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="container mt-5">
+            <div class="card mb-5">
+                <div class="card-header">
+                    <h5 class="card-title">Registro de Trabajadores</h5>
+                </div>
+                <div class="card-body">
+                    <h:form>
+                        <!-- Grupo: Nombre -->
+                        <div class="formulario__grupo" id="grupo__nombre">
+                            <div class="col">
+                                <h:outputLabel for="nombre" styleClass="formulario__label" value="Nombres:"/>
+                                <div class="formulario__grupo-input">
+                                    <h:inputText id="nombre" styleClass="form-control" required="true"
+                                                 requiredMessage="Debes ingresar los Nombres del Trabajador"/>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Grupo: Apellido -->
+                        <div class="formulario__grupo" id="grupo__apellido">
+                            <div class="col">
+                                <h:outputLabel for="apellido" styleClass="formulario__label" value="Apellidos:"/>
+                                <div class="formulario__grupo-input">
+                                    <h:inputText id="apellido" styleClass="form-control" required="true"
+                                                 requiredMessage="Debes ingresar los Apellidos del Trabajador"/>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Grupo: CARGO TRABAJADOR -->
+                        <div class="formulario__grupo" id="grupo__cargotrabj">
+                            <div class="col">
+                                <h:outputLabel for="cargo" value="Cargo del Trabajador"/>
+                                <h:selectOneMenu id="cargo" styleClass="form-control">
+                                    <f:selectItem itemValue="a" itemLabel="Administrador"/>
+                                    <f:selectItem itemValue="s" itemLabel="Secretaria"/>
+                                    <f:selectItem itemValue="e" itemLabel="Empleado"/>
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+                        <!-- Grupo: LOGIN -->
+                        <div class="formulario__grupo" id="grupo__login">
+                            <div class="col">
+                                <h:outputLabel for="logintra" styleClass="formulario__label" value="Login:"/>
+                                <div class="formulario__grupo-input">
+                                    <h:inputText id="logintra" styleClass="form-control" required="true"
+                                                 requiredMessage="Debes de ingresar un Login"/>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Grupo: PASSWORD -->
+                        <div class="formulario__grupo" id="grupo__password">
+                            <div class="col">
+                                <h:outputLabel for="passwordtrab" styleClass="formulario__label" value="Password:"/>
+                                <div class="formulario__grupo-input">
+                                    <h:inputText id="passwordtrab" styleClass="form-control" required="true"
+                                                 requiredMessage="Debes de ingresas tu Password"/>
+                                </div>
+                            </div>
+                        </div>    <!-- Grupo: ESTADO TRABAJADOR -->
+                        <div class="formulario__grupo" id="grupo__estadotrab">
+                            <div class="col">
+                                <h:outputLabel for="estado" value="Estado del Trabajador"/>
+                                <h:selectOneMenu id="estado" styleClass="form-control">
+                                    <f:selectItem itemValue="a" itemLabel="Activo"/>
+                                    <f:selectItem itemValue="i" itemLabel="Inactivo"/>
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+                        <br/>
+                        <h:panelGrid columns="4">
+                            <h:commandButton styleClass="btn btn-primary center-block" value="Guardar"
+                                             action="#"/>
+                            <h:commandButton styleClass="btn btn-primary center-block" value="Consultar Trabajador"
+                                             action="#"/>
+                            <h:commandButton styleClass="btn btn-primary center-block" value="Eliminar"
+                                             action="#"/>
+                            <h:commandButton styleClass="btn btn-primary center-block" value="Actualizar"
+                                             action="#"/>
+                        </h:panelGrid>
+
+                        <br/>
+
+                        <h:dataTable styleClass="table table-striped" var="" value="#">
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Nombres del Trabajador"/>
+                                </f:facet>
+                                <h:outputText value="#"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Apellidos del Trabajador"/>
+                                </f:facet>
+                                <h:outputText value="#"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Cargo del Trabajador"/>
+                                </f:facet>
+                                <h:outputText value="#"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Estado del Trabajador"/>
+                                </f:facet>
+                                <h:outputText value="#"/>
+                            </h:column>
+                        </h:dataTable>
+                    </h:form>
+                </div>
+            </div>
+        </div>
+        <footer class="mt-5">
+            <p>&copy; 2024 Hotel Intercontinental. Todos los derechos reservados.</p>
+            <p>Para más información, visita nuestro sitio web: <a href="https://www.hotelintercontinental.com">www.hotelintercontinental.com</a></p>
+        </footer>
+
+    </h:form>
+
+</h:body>
 </html>

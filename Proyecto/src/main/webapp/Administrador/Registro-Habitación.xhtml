@@ -4,8 +4,183 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
-    <h:outputLabel value="Hello, world"/>
-</f:view>
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+
+<h:head>
+    <title>Administración Hotel Intercontinental</title>
+    <h:outputStylesheet name="css/InicioAdmin.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+</h:head>
+<h:body>
+    <h:form>
+        <header id="Inicio">
+            <div class="header-content">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="#">Administración Hotel Intercontinental</a>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="Registro-Personas.xhtml">Registro de Clientes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Registro-Habitación.xhtml">Registro de Habitaciones</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Registro-Reservas.xhtml">Registro de Reservas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Registro-Productos.xhtml">Registro de Productos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Registro-Trabajador.xhtml">Registro de Personal</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="faces/Index.xhtml">Cerrar Sesión</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="container mt-5">
+            <div class="card mb-5">
+                <div class="card-header">
+                    <h5 class="card-title">Registro de Habitaciones</h5>
+                </div>
+                <div class="card-body">
+                    <h:form>
+                        <!-- Grupo: NUMERO DE HABITACION -->
+                        <div class="formulario__grupo" id="grupo__numhabit">
+                            <div class="col">
+                                <h:outputLabel for="numhabit" styleClass="formulario__label" value="Número de Habitación:"/>
+                                <div class="formulario__grupo-input">
+                                    <h:inputText id="numhabit" styleClass="form-control" required="true"
+                                                 requiredMessage="Ingresa el Número de la Habitación"/>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Grupo: PISO HABITACION -->
+                        <div class="formulario__grupo" id="grupo__pisohabit">
+                            <div class="col">
+                                <h:outputLabel for="pisohabit" styleClass="formulario__label" value="Nivel de la Habitación:"/>
+                                <div class="formulario__grupo-input">
+                                    <h:inputText id="pisohabit" styleClass="form-control" required="true"
+                                                 requiredMessage="Ingresa el Nivel de la Habitación"/>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Grupo: DESCRIPCION HABITACION -->
+                        <div class="formulario__grupo" id="grupo__descrihabit">
+                            <div class="col">
+                                <h:outputLabel for="descrihabit" styleClass="formulario__label" value="Descripción de la Habitación:"/>
+                                <div class="formulario__grupo-input">
+                                    <h:inputText id="descrihabit" styleClass="form-control" required="true"
+                                                 requiredMessage="Ingresa una breve Descripción de la Habitación"/>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Grupo: PRECIO DIARIO HABITACION -->
+                        <div class="formulario__grupo" id="grupo__preciohabit">
+                            <div class="col">
+                                <h:outputLabel for="preciohabit" styleClass="formulario__label" value="Precio diario de la Habitación:"/>
+                                <div class="formulario__grupo-input">
+                                    <h:inputText id="preciohabit" styleClass="form-control" required="true"
+                                                 requiredMessage="Ingresa el Valor diario de la Habitación"/>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Grupo: ESTADO HABITACION -->
+                        <div class="formulario__grupo" id="grupo__estadohabit">
+                            <div class="col">
+                                <h:outputLabel for="estado" value="Estado de la habitacion"/>
+                                <h:selectOneMenu id="estado" styleClass="form-control">
+                                    <f:selectItem itemValue="o" itemLabel="Ocupada"/>
+                                    <f:selectItem itemValue="m" itemLabel="Mantenimiento"/>
+                                    <f:selectItem itemValue="d" itemLabel="Disponible"/>
+                                    <f:selectItem itemValue="b" itemLabel="De Baja"/>
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+
+                        <!-- Grupo: TIPO DE  HABITACION -->
+                        <div class="formulario__grupo" id="grupo__tipohabit">
+                            <div class="col">
+                                <h:outputLabel for="tipo" value="Tipo de la habitacion"/>
+                                <h:selectOneMenu id="tipo" styleClass="form-control">
+                                    <f:selectItem itemValue="i" itemLabel="Individuales"/>
+                                    <f:selectItem itemValue="d" itemLabel="Dobles"/>
+                                    <f:selectItem itemValue="t" itemLabel="Triples"/>
+                                    <f:selectItem itemValue="c" itemLabel="Cuádruples"/>
+                                    <f:selectItem itemValue="s" itemLabel="Suite"/>
+                                    <f:selectItem itemValue="j" itemLabel="Junios Suite"/>
+                                    <f:selectItem itemValue="g" itemLabel="Gran Suite"/>
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+                        <br/>
+                        <h:panelGrid columns="4">
+                            <h:commandButton styleClass="btn btn-primary center-block" value="Guardar"
+                                             action="#"/>
+                            <h:commandButton styleClass="btn btn-primary center-block" value="Consultar Habitacion"
+                                             action="#"/>
+                            <h:commandButton styleClass="btn btn-primary center-block" value="Eliminar"
+                                             action="#"/>
+                            <h:commandButton styleClass="btn btn-primary center-block" value="Actualizar"
+                                             action="#"/>
+                        </h:panelGrid>
+
+                        <br/>
+
+                        <h:dataTable styleClass="table table-striped" var="" value="#">
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Número de la Habitación"/>
+                                </f:facet>
+                                <h:outputText value="#"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Nivel de la Habitación"/>
+                                </f:facet>
+                                <h:outputText value="#"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Descripción"/>
+                                </f:facet>
+                                <h:outputText value="#"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Precio de la Habitación"/>
+                                </f:facet>
+                                <h:outputText value="#"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Estado de la Habitación"/>
+                                </f:facet>
+                                <h:outputText value="#"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Tipo de Habitación"/>
+                                </f:facet>
+                                <h:outputText value="#"/>
+                            </h:column>
+                        </h:dataTable>
+                    </h:form>
+                </div>
+            </div>
+        </div>
+        <footer class="mt-5">
+            <p>&copy; 2024 Hotel Intercontinental. Todos los derechos reservados.</p>
+            <p>Para más información, visita nuestro sitio web: <a href="https://www.hotelintercontinental.com">www.hotelintercontinental.com</a></p>
+        </footer>
+
+    </h:form>
+
+</h:body>
 </html>

@@ -6,13 +6,13 @@ body {
 
 /* Estilos para el contenedor principal */
 .container {
-    max-width: 800px;
+    max-width: 2000px;
     margin: auto;
 }
 
 /* Estilos para los títulos de las tarjetas */
 .card-header {
-    background-color: #000525; /* Color celeste atardecer */
+    background-color: #0077b6; /* Color celeste atardecer */
     color: #fff;
     padding: 10px;
 }
@@ -28,13 +28,13 @@ body {
 
 /* Estilos para los botones */
 .btn-primary {
-    background-color: #688C2A; /* Color amarillo dorado */
-    border-color: #688C2A;
+    background-color: #ffa62b; /* Color amarillo dorado */
+    border-color: #ffa62b;
 }
 
 .btn-primary:hover {
-    background-color: #496619; /* Color amarillo dorado más oscuro al pasar el cursor */
-    border-color: #496619;
+    background-color: #cc7e0b; /* Color amarillo dorado más oscuro al pasar el cursor */
+    border-color: #cc7e0b;
 }
 
 /* Estilos para las tarjetas */

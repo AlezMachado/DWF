@@ -44,26 +44,167 @@
                 </nav>
             </div>
         </header>
-
-        <!-- CONTENEDOR PRINCIPAL-->
-
         <div class="container mt-5">
-
-            <!--BIENVENIDA-->
-            <div class="row">
-                <div class="col">
-                    <h1>Detalle de Reservación</h1>
-                    <hr/>
-
+            <div class="card mb-5">
+                <div class="card-header">
+                    <h5 class="card-title">Datos del Cliente</h5>
+                </div>
+                <div class="card-body">
+                    <h:form>
+                        <!-- Grupo: Nombre -->
+                        <div class="formulario__grupo" id="grupo__nombre">
+                            <div class="col">
+                                <h:outputLabel for="nombre" styleClass="formulario__label" value="Nombres:"/>
+                                <div class="formulario__grupo-input">
+                                    <h:inputText id="nombre" styleClass="form-control" required="true"
+                                                 requiredMessage="Debes ingresar los Nombres del Cliente"/>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Grupo: Apellido -->
+                        <div class="formulario__grupo" id="grupo__apellido">
+                            <div class="col">
+                                <h:outputLabel for="apellido" styleClass="formulario__label" value="Apellidos:"/>
+                                <div class="formulario__grupo-input">
+                                    <h:inputText id="apellido" styleClass="form-control" required="true"
+                                                 requiredMessage="Debes ingresar los Apellidos del Cliente"/>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Grupo: tipodocumento -->
+                        <div class="formulario__grupo" id="grupo__tipodocumento">
+                            <div class="col">
+                                <h:outputLabel for="tipos" value="Tipo de Documento"/>
+                                <h:selectOneMenu id="tipos" styleClass="form-control">
+                                    <f:selectItem itemValue="d" itemLabel="DUI"/>
+                                    <f:selectItem itemValue="n" itemLabel="NIT"/>
+                                    <f:selectItem itemValue="p" itemLabel="PASAPORTE"/>
+                                    <f:selectItem itemValue="t" itemLabel="Targeta de Conducir"/>
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+                        <!-- Grupo: NumDocu -->
+                        <div class="formulario__grupo" id="grupo__numdocu">
+                            <div class="col">
+                                <h:outputLabel for="numdocu" styleClass="formulario__label" value="Número de Documento:"/>
+                                <div class="formulario__grupo-input">
+                                    <h:inputText id="numdocu" styleClass="form-control" required="true"
+                                                 requiredMessage="Ingresa el Número del Documento"/>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Grupo: Direccion -->
+                        <div class="formulario__grupo" id="grupo__direccion">
+                            <div class="col">
+                                <h:outputLabel for="direccion" styleClass="formulario__label" value="Direccion:"/>
+                                <div class="formulario__grupo-input">
+                                    <h:inputText id="direccion" styleClass="form-control" required="true"
+                                                 requiredMessage="Ingresa tu Dirección"/>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Grupo: PAIS -->
+                        <div class="formulario__grupo" id="grupo__pais">
+                            <div class="col">
+                                <h:outputLabel for="pais" styleClass="formulario__label" value="Pais:"/>
+                                <div class="formulario__grupo-input">
+                                    <h:inputText id="pais" styleClass="form-control" required="true"
+                                                 requiredMessage="Ingreso tu Pais"/>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Grupo: Teléfono -->
+                        <div class="formulario__grupo" id="grupo__telefono">
+                            <div class="col">
+                                <h:outputLabel for="numero" styleClass="formulario__label" value="Numero Telefonico:"/>
+                                <div class="formulario__grupo-input">
+                                    <h:inputText id="numero" styleClass="form-control" required="true"
+                                                 requiredMessage="Ingresa tu Número Teléfonico"/>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Grupo: Correo Electronico -->
+                        <div class="formulario__grupo" id="grupo__correo">
+                            <div class="col">
+                                <h:outputLabel for="correo" styleClass="formulario__label" value="Correo Electrónico:"/>
+                                <div class="formulario__grupo-input">
+                                    <input type="email" class="form-control" name="correo" id="correo" placeholder="correo@correo.com"/>
+                                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <h:panelGrid columns="4">
+                            <h:commandButton styleClass="btn btn-primary center-block" value="Guardar"
+                                             action="#"/>
+                            <h:commandButton styleClass="btn btn-primary center-block" value="Consultar Cliente"
+                                             action="#"/>
+                            <h:commandButton styleClass="btn btn-primary center-block" value="Eliminar"
+                                             action="#"/>
+                            <h:commandButton styleClass="btn btn-primary center-block" value="Actualizar"
+                                             action="#"/>
+                        </h:panelGrid>
+                        <br/>
+                        <h:dataTable styleClass="table table-striped" var="" value="#">
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Nombres"/>
+                                </f:facet>
+                                <h:outputText value="#"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Apellidos"/>
+                                </f:facet>
+                                <h:outputText value="#"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Tipo de Documento"/>
+                                </f:facet>
+                                <h:outputText value="#"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Número de Documento"/>
+                                </f:facet>
+                                <h:outputText value="#"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Dirección"/>
+                                </f:facet>
+                                <h:outputText value="#"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="País"/>
+                                </f:facet>
+                                <h:outputText value="#"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Número Telefónico"/>
+                                </f:facet>
+                                <h:outputText value="#"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Correo Electrónico"/>
+                                </f:facet>
+                                <h:outputText value="#"/>
+                            </h:column>
+                        </h:dataTable>
+                    </h:form>
                 </div>
             </div>
         </div>
-
         <footer class="mt-5">
             <p>&copy; 2024 Hotel Intercontinental. Todos los derechos reservados.</p>
             <p>Para más información, visita nuestro sitio web: <a href="https://www.hotelintercontinental.com">www.hotelintercontinental.com</a></p>
         </footer>
 
     </h:form>
+
 </h:body>
 </html>
