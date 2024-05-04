@@ -2,74 +2,66 @@ package sv.edu.udb.www.entities;
 
 import jakarta.persistence.*;
 
-import java.sql.Date;
-import java.util.Collection;
+import java.time.LocalDate;
 
 @Entity
+@Table(name = "reserva")
 public class Reserva {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id_reserva", nullable = false)
-    private int idReserva;
-    @Basic
-    @Column(name = "id_cliente", nullable = false)
-    private int idCliente;
-    @Basic
-    @Column(name = "id_trabajador", nullable = false)
-    private int idTrabajador;
-    @Basic
+    private Integer id;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "id_cliente", nullable = false)
+    private Cliente idCliente;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "id_trabajador", nullable = false)
+    private Trabajador idTrabajador;
+
     @Column(name = "tipo_reserva", nullable = false, length = 15)
     private String tipoReserva;
-    @Basic
+
     @Column(name = "fecha_reserva", nullable = false)
-    private Date fechaReserva;
-    @Basic
+    private LocalDate fechaReserva;
+
     @Column(name = "fecha_ingreso", nullable = false)
-    private Date fechaIngreso;
-    @Basic
+    private LocalDate fechaIngreso;
+
     @Column(name = "fecha_salida", nullable = false)
-    private Date fechaSalida;
-    @Basic
+    private LocalDate fechaSalida;
+
     @Column(name = "costo_alojamiento", nullable = false, length = 15)
     private String costoAlojamiento;
-    @Basic
+
     @Column(name = "estado", nullable = false, length = 15)
     private String estado;
-    @Basic
-    @Column(name = "id_habitacion", nullable = false)
-    private int idHabitacion;
-    @OneToMany(mappedBy = "reservaByIdReserva")
-    private Collection<Consumo> consumosByIdReserva;
-    @OneToMany(mappedBy = "reservaByIdReserva")
-    private Collection<Pago> pagosByIdReserva;
-    @ManyToOne
-    @JoinColumn(name = "id_cliente", referencedColumnName = "id_cliente", nullable = false)
-    private Cliente clienteByIdCliente;
-    @ManyToOne
-    @JoinColumn(name = "id_habitacion", referencedColumnName = "id_habitacion", nullable = false)
-    private Habitacion habitacionByIdHabitacion;
 
-    public int getIdReserva() {
-        return idReserva;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "id_habitacion", nullable = false)
+    private Habitacion idHabitacion;
+
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdReserva(int idReserva) {
-        this.idReserva = idReserva;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public int getIdCliente() {
+    public Cliente getIdCliente() {
         return idCliente;
     }
 
-    public void setIdCliente(int idCliente) {
+    public void setIdCliente(Cliente idCliente) {
         this.idCliente = idCliente;
     }
 
-    public int getIdTrabajador() {
+    public Trabajador getIdTrabajador() {
         return idTrabajador;
     }
 
-    public void setIdTrabajador(int idTrabajador) {
+    public void setIdTrabajador(Trabajador idTrabajador) {
         this.idTrabajador = idTrabajador;
     }
 
@@ -81,27 +73,27 @@ public class Reserva {
         this.tipoReserva = tipoReserva;
     }
 
-    public Date getFechaReserva() {
+    public LocalDate getFechaReserva() {
         return fechaReserva;
     }
 
-    public void setFechaReserva(Date fechaReserva) {
+    public void setFechaReserva(LocalDate fechaReserva) {
         this.fechaReserva = fechaReserva;
     }
 
-    public Date getFechaIngreso() {
+    public LocalDate getFechaIngreso() {
         return fechaIngreso;
     }
 
-    public void setFechaIngreso(Date fechaIngreso) {
+    public void setFechaIngreso(LocalDate fechaIngreso) {
         this.fechaIngreso = fechaIngreso;
     }
 
-    public Date getFechaSalida() {
+    public LocalDate getFechaSalida() {
         return fechaSalida;
     }
 
-    public void setFechaSalida(Date fechaSalida) {
+    public void setFechaSalida(LocalDate fechaSalida) {
         this.fechaSalida = fechaSalida;
     }
 
@@ -121,82 +113,12 @@ public class Reserva {
         this.estado = estado;
     }
 
-    public int getIdHabitacion() {
+    public Habitacion getIdHabitacion() {
         return idHabitacion;
     }
 
-    public void setIdHabitacion(int idHabitacion) {
+    public void setIdHabitacion(Habitacion idHabitacion) {
         this.idHabitacion = idHabitacion;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Reserva reserva = (Reserva) o;
-
-        if (idReserva != reserva.idReserva) return false;
-        if (idCliente != reserva.idCliente) return false;
-        if (idTrabajador != reserva.idTrabajador) return false;
-        if (idHabitacion != reserva.idHabitacion) return false;
-        if (tipoReserva != null ? !tipoReserva.equals(reserva.tipoReserva) : reserva.tipoReserva != null) return false;
-        if (fechaReserva != null ? !fechaReserva.equals(reserva.fechaReserva) : reserva.fechaReserva != null)
-            return false;
-        if (fechaIngreso != null ? !fechaIngreso.equals(reserva.fechaIngreso) : reserva.fechaIngreso != null)
-            return false;
-        if (fechaSalida != null ? !fechaSalida.equals(reserva.fechaSalida) : reserva.fechaSalida != null) return false;
-        if (costoAlojamiento != null ? !costoAlojamiento.equals(reserva.costoAlojamiento) : reserva.costoAlojamiento != null)
-            return false;
-        if (estado != null ? !estado.equals(reserva.estado) : reserva.estado != null) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = idReserva;
-        result = 31 * result + idCliente;
-        result = 31 * result + idTrabajador;
-        result = 31 * result + (tipoReserva != null ? tipoReserva.hashCode() : 0);
-        result = 31 * result + (fechaReserva != null ? fechaReserva.hashCode() : 0);
-        result = 31 * result + (fechaIngreso != null ? fechaIngreso.hashCode() : 0);
-        result = 31 * result + (fechaSalida != null ? fechaSalida.hashCode() : 0);
-        result = 31 * result + (costoAlojamiento != null ? costoAlojamiento.hashCode() : 0);
-        result = 31 * result + (estado != null ? estado.hashCode() : 0);
-        result = 31 * result + idHabitacion;
-        return result;
-    }
-
-    public Collection<Consumo> getConsumosByIdReserva() {
-        return consumosByIdReserva;
-    }
-
-    public void setConsumosByIdReserva(Collection<Consumo> consumosByIdReserva) {
-        this.consumosByIdReserva = consumosByIdReserva;
-    }
-
-    public Collection<Pago> getPagosByIdReserva() {
-        return pagosByIdReserva;
-    }
-
-    public void setPagosByIdReserva(Collection<Pago> pagosByIdReserva) {
-        this.pagosByIdReserva = pagosByIdReserva;
-    }
-
-    public Cliente getClienteByIdCliente() {
-        return clienteByIdCliente;
-    }
-
-    public void setClienteByIdCliente(Cliente clienteByIdCliente) {
-        this.clienteByIdCliente = clienteByIdCliente;
-    }
-
-    public Habitacion getHabitacionByIdHabitacion() {
-        return habitacionByIdHabitacion;
-    }
-
-    public void setHabitacionByIdHabitacion(Habitacion habitacionByIdHabitacion) {
-        this.habitacionByIdHabitacion = habitacionByIdHabitacion;
-    }
 }

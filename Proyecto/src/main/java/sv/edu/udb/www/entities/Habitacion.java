@@ -1,38 +1,41 @@
 package sv.edu.udb.www.entities;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "habitacion")
 public class Habitacion {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id_habitacion", nullable = false)
-    private int idHabitacion;
-    @Basic
+    private Integer id;
+
     @Column(name = "numero_habitacion", nullable = false, length = 15)
     private String numeroHabitacion;
-    @Basic
+
     @Column(name = "piso", nullable = false, length = 10)
     private String piso;
-    @Basic
+
     @Column(name = "descripcion", nullable = false, length = 80)
     private String descripcion;
-    @Basic
+
     @Column(name = "precio_diario", nullable = false, length = 10)
     private String precioDiario;
-    @Basic
+
     @Column(name = "estado", nullable = false, length = 10)
     private String estado;
-    @Basic
+
     @Column(name = "tipo_habitacion", nullable = false, length = 15)
     private String tipoHabitacion;
 
-    public int getIdHabitacion() {
-        return idHabitacion;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdHabitacion(int idHabitacion) {
-        this.idHabitacion = idHabitacion;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNumeroHabitacion() {
@@ -83,35 +86,4 @@ public class Habitacion {
         this.tipoHabitacion = tipoHabitacion;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Habitacion that = (Habitacion) o;
-
-        if (idHabitacion != that.idHabitacion) return false;
-        if (numeroHabitacion != null ? !numeroHabitacion.equals(that.numeroHabitacion) : that.numeroHabitacion != null)
-            return false;
-        if (piso != null ? !piso.equals(that.piso) : that.piso != null) return false;
-        if (descripcion != null ? !descripcion.equals(that.descripcion) : that.descripcion != null) return false;
-        if (precioDiario != null ? !precioDiario.equals(that.precioDiario) : that.precioDiario != null) return false;
-        if (estado != null ? !estado.equals(that.estado) : that.estado != null) return false;
-        if (tipoHabitacion != null ? !tipoHabitacion.equals(that.tipoHabitacion) : that.tipoHabitacion != null)
-            return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = idHabitacion;
-        result = 31 * result + (numeroHabitacion != null ? numeroHabitacion.hashCode() : 0);
-        result = 31 * result + (piso != null ? piso.hashCode() : 0);
-        result = 31 * result + (descripcion != null ? descripcion.hashCode() : 0);
-        result = 31 * result + (precioDiario != null ? precioDiario.hashCode() : 0);
-        result = 31 * result + (estado != null ? estado.hashCode() : 0);
-        result = 31 * result + (tipoHabitacion != null ? tipoHabitacion.hashCode() : 0);
-        return result;
-    }
 }

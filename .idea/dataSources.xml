@@ -14,54 +14,5 @@
       </jdbc-additional-properties>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="default/TopLink" uuid="3cd1794e-c1d9-4822-929d-24102dd53cd9">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <imported>true</imported>
-      <remarks>TopLink
-
-C:/Users/alexa/Downloads/Alex 01-2024/DWF/Proyecto Catedra/DWF/Proyecto/src/main/resources/META-INF/persistence.xml</remarks>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/bdhotel?useSSL=false</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
-    <data-source source="LOCAL" name="default/EclipseLink" uuid="b609d9e1-933f-49fd-83e3-166f2058853d">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <imported>true</imported>
-      <remarks>EclipseLink
-
-C:/Users/alexa/Downloads/Alex 01-2024/DWF/Proyecto Catedra/DWF/Proyecto/src/main/resources/META-INF/persistence.xml</remarks>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/basereserva?useSSL=false</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
-    <data-source source="LOCAL" name="default/Hibernate" uuid="85fa55fc-fa9a-4903-b95c-549b3cb12fe1">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <imported>true</imported>
-      <remarks>Hibernate
-
-C:/Users/alexa/Downloads/Alex 01-2024/DWF/Proyecto Catedra/DWF/Proyecto/src/main/resources/META-INF/persistence.xml</remarks>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/basereserva?useSSL=false</jdbc-url>
-      <jdbc-additional-properties>
-        <property name="com.intellij.clouds.kubernetes.db.host.port" />
-        <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
-        <property name="com.intellij.clouds.kubernetes.db.container.port" />
-      </jdbc-additional-properties>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
-    <data-source source="LOCAL" name="default/OpenJPA" uuid="e0e10376-3701-4122-bf1e-1154afedd35d">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <imported>true</imported>
-      <remarks>OpenJPA
-
-C:/Users/alexa/Downloads/Alex 01-2024/DWF/Proyecto Catedra/DWF/Proyecto/src/main/resources/META-INF/persistence.xml</remarks>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/basereserva?useSSL=false</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
   </component>
 </project>
