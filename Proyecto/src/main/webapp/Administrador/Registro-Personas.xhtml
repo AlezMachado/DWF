@@ -54,89 +54,88 @@
                         <!-- Grupo: Nombre -->
                         <div class="formulario__grupo" id="grupo__nombre">
                             <div class="col">
-                                <h:outputLabel for="nombre" styleClass="formulario__label" value="Nombres:"/>
+                                <h3>Nombres de los clientes</h3>
                                 <div class="formulario__grupo-input">
-                                    <h:inputText id="nombre" styleClass="form-control" required="true"
-                                                 requiredMessage="Debes ingresar los Nombres del Cliente"/>
-                                </div>
+                                    <h:outputLabel  styleClass="formulario__label" value="Nombres:"/>
+                                    <h:inputText styleClass="form-control" value="#{clienteBean.cliente.nombreCliente}"/>
                             </div>
                         </div>
+                        </div>
+
                         <!-- Grupo: Apellido -->
                         <div class="formulario__grupo" id="grupo__apellido">
                             <div class="col">
-                                <h:outputLabel for="apellido" styleClass="formulario__label" value="Apellidos:"/>
-                                <div class="formulario__grupo-input">
-                                    <h:inputText id="apellido" styleClass="form-control" required="true"
-                                                 requiredMessage="Debes ingresar los Apellidos del Cliente"/>
-                                </div>
+                               <h3>Apellidos</h3>
+                                 <div class="formulario__grupo-input">
+                                     <h:outputLabel  styleClass="formulario__label" value="Apellidos:"/>
+                                     <h:inputText styleClass="form-control" value="#{clienteBean.cliente.apellidoCliente}"/>
+                                 </div>
                             </div>
                         </div>
                         <!-- Grupo: tipodocumento -->
                         <div class="formulario__grupo" id="grupo__tipodocumento">
                             <div class="col">
-                                <h:outputLabel for="tipos" value="Tipo de Documento"/>
-                                <h:selectOneMenu id="tipos" styleClass="form-control">
-                                    <f:selectItem itemValue="d" itemLabel="DUI"/>
-                                    <f:selectItem itemValue="n" itemLabel="NIT"/>
-                                    <f:selectItem itemValue="p" itemLabel="PASAPORTE"/>
-                                    <f:selectItem itemValue="t" itemLabel="Targeta de Conducir"/>
-                                </h:selectOneMenu>
+                                <h3>tipo de doumento</h3>
+                                <div class="formulario__grupo-input">
+                                <h:outputLabel  styleClass="formulario__label" value="Tipo de documentos:"/>
+                                <h:inputText styleClass="form-control" value="#{clienteBean.cliente.tipoDocumento}"/>
+                                </div>
                             </div>
                         </div>
                         <!-- Grupo: NumDocu -->
                         <div class="formulario__grupo" id="grupo__numdocu">
                             <div class="col">
-                                <h:outputLabel for="numdocu" styleClass="formulario__label" value="Número de Documento:"/>
+                                <h3>numero de doc</h3>
                                 <div class="formulario__grupo-input">
-                                    <h:inputText id="numdocu" styleClass="form-control" required="true"
-                                                 requiredMessage="Ingresa el Número del Documento"/>
+                                    <h:outputLabel  styleClass="formulario__label" value="numero de documentos:"/>
+                                    <h:inputText styleClass="form-control" value="#{clienteBean.cliente.numDocumento}"/>
                                 </div>
                             </div>
                         </div>
                         <!-- Grupo: Direccion -->
                         <div class="formulario__grupo" id="grupo__direccion">
                             <div class="col">
-                                <h:outputLabel for="direccion" styleClass="formulario__label" value="Direccion:"/>
+                                <h3>direccion</h3>
                                 <div class="formulario__grupo-input">
-                                    <h:inputText id="direccion" styleClass="form-control" required="true"
-                                                 requiredMessage="Ingresa tu Dirección"/>
+                                    <h:outputLabel  styleClass="formulario__label" value="direccion:"/>
+                                    <h:inputText styleClass="form-control" value="#{clienteBean.cliente.direccion}"/>
                                 </div>
                             </div>
                         </div>
                         <!-- Grupo: PAIS -->
                         <div class="formulario__grupo" id="grupo__pais">
                             <div class="col">
-                                <h:outputLabel for="pais" styleClass="formulario__label" value="Pais:"/>
+                                <h3>pais</h3>
                                 <div class="formulario__grupo-input">
-                                    <h:inputText id="pais" styleClass="form-control" required="true"
-                                                 requiredMessage="Ingreso tu Pais"/>
+                                    <h:outputLabel  styleClass="formulario__label" value="pais:"/>
+                                    <h:inputText styleClass="form-control" value="#{clienteBean.cliente.pais}"/>
                                 </div>
                             </div>
                         </div>
                         <!-- Grupo: Teléfono -->
                         <div class="formulario__grupo" id="grupo__telefono">
                             <div class="col">
-                                <h:outputLabel for="numero" styleClass="formulario__label" value="Numero Telefonico:"/>
+                               <h3>telefono</h3>
                                 <div class="formulario__grupo-input">
-                                    <h:inputText id="numero" styleClass="form-control" required="true"
-                                                 requiredMessage="Ingresa tu Número Teléfonico"/>
+                                    <h:outputLabel  styleClass="formulario__label" value="numero de telefono:"/>
+                                    <h:inputText styleClass="form-control" value="#{clienteBean.cliente.telefono}"/>
                                 </div>
                             </div>
                         </div>
                         <!-- Grupo: Correo Electronico -->
                         <div class="formulario__grupo" id="grupo__correo">
                             <div class="col">
-                                <h:outputLabel for="correo" styleClass="formulario__label" value="Correo Electrónico:"/>
+                                <h3>email</h3>
                                 <div class="formulario__grupo-input">
-                                    <input type="email" class="form-control" name="correo" id="correo" placeholder="correo@correo.com"/>
-                                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                    <h:outputLabel  styleClass="formulario__label" value="numero de documentos:"/>
+                                    <h:inputText styleClass="form-control" value="#{clienteBean.cliente.email}"/>
                                 </div>
                             </div>
                         </div>
                         <br/>
                         <h:panelGrid columns="4">
                             <h:commandButton styleClass="btn btn-primary center-block" value="Guardar"
-                                             action="#"/>
+                                             action="#{clienteBean.agregarCliente()}"/>
                             <h:commandButton styleClass="btn btn-primary center-block" value="Consultar Cliente"
                                              action="#"/>
                             <h:commandButton styleClass="btn btn-primary center-block" value="Eliminar"

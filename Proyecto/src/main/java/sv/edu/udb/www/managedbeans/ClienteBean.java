@@ -11,12 +11,16 @@ import java.util.List;
 
 public class ClienteBean {
 
+
     ClienteModel modelCliente = new ClienteModel();
 
 
     private List<ClienteEntity> ClienteEntity;
 
-    private ClienteEntity clienteEntity;
+    private ClienteEntity cliente;
+    public ClienteBean() {
+        cliente = new ClienteEntity(); // Inicializar la instancia de cliente
+    }
 
     public ClienteModel getModelCliente() {
         return modelCliente;
@@ -26,25 +30,29 @@ public class ClienteBean {
         this.modelCliente = modelCliente;
     }
 
-    public List<ClienteEntity> getCliente() {
+    public List<sv.edu.udb.www.entities.ClienteEntity> getClienteEntity() {
         return ClienteEntity;
     }
 
-    public void setCliente(ClienteEntity clienteEntity) {
-        this.clienteEntity = clienteEntity;
+    public void setClienteEntity(List<sv.edu.udb.www.entities.ClienteEntity> clienteEntity) {
+        ClienteEntity = clienteEntity;
     }
 
-    public void setCliente(List<ClienteEntity> clienteEntity) {
-        ClienteEntity = clienteEntity;
+    public sv.edu.udb.www.entities.ClienteEntity getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(sv.edu.udb.www.entities.ClienteEntity cliente) {
+        this.cliente = cliente;
     }
 
     public void agregarCliente() {
 
-        modelCliente.insertarCliente(this.clienteEntity);
+        modelCliente.insertarCliente(this.cliente);
     }
 
     public void editarCliente() {
-        modelCliente.modificarCliente(this.clienteEntity);
+        modelCliente.modificarCliente(this.cliente);
     }
 
     public void eliminarCliente(int idcliente) {
@@ -54,7 +62,7 @@ public class ClienteBean {
     }
 
     public void CargarCliente(ClienteEntity cliente){
-        this.clienteEntity = cliente;
+        this.cliente = cliente;
 
     }
 
