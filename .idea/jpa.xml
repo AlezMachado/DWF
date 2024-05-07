@@ -4,5 +4,8 @@
     <option name="reLastEntityCreationPackage" value="Proyecto/src/main/java/sv/edu/udb/www/entities" />
     <option name="reverseEngineeringLastDbConnectionId" value="71315119-08e3-4680-8f21-99799d423d66" />
   </component>
-  <component name="JpaPluginProjectSettings" commentSavingStrategy="@Comment annotation" reExcludeTablePrefixes="" reExcludeColumnPrefixes="" reExcludeTableSuffixes="" reExcludeColumnSuffixes="" />
+  <component name="JpaPluginProjectSettings" commentSavingStrategy="@Comment annotation" reExcludeTablePrefixes="" reExcludeColumnPrefixes="" reExcludeTableSuffixes="" reExcludeColumnSuffixes="">
+    <option name="entityNameTemplate" value="${className.underscore()}" />
+    <option name="scaffoldingLanguage" />
+  </component>
 </project>
