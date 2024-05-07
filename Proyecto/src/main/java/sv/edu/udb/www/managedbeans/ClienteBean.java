@@ -18,6 +18,7 @@ public class ClienteBean {
     private List<ClienteEntity> ClienteEntity;
 
     private ClienteEntity cliente;
+
     public ClienteBean() {
         cliente = new ClienteEntity(); // Inicializar la instancia de cliente
     }
@@ -61,9 +62,8 @@ public class ClienteBean {
         this.ClienteEntity = modelCliente.listarClientes();
     }
 
-    public void CargarCliente(ClienteEntity cliente){
-        this.cliente = cliente;
-
+    public void cargarClientes() {
+        ClienteEntity = modelCliente.listarClientes();
     }
 
 

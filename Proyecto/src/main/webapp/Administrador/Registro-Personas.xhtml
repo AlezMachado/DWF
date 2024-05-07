@@ -9,6 +9,9 @@
 
 
 <h:head>
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{clienteBean.cargarClientes}" />
+    </f:metadata>
     <title>Administración Hotel Intercontinental</title>
     <h:outputStylesheet name="css/InicioAdmin.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
@@ -144,54 +147,42 @@
                                              action="#"/>
                         </h:panelGrid>
                         <br/>
-                        <h:dataTable styleClass="table table-striped" var="" value="#">
+                        <h:dataTable value="#{clienteBean.clienteEntity}" var="cliente">
                             <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Nombres"/>
-                                </f:facet>
-                                <h:outputText value="#"/>
+                                <f:facet name="header">ID</f:facet>
+                                #{cliente.id}
                             </h:column>
                             <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Apellidos"/>
-                                </f:facet>
-                                <h:outputText value="#"/>
+                                <f:facet name="header">Nombre</f:facet>
+                                #{cliente.nombreCliente}
                             </h:column>
                             <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Tipo de Documento"/>
-                                </f:facet>
-                                <h:outputText value="#"/>
+                                <f:facet name="header">apellido</f:facet>
+                                #{cliente.apellidoCliente}
                             </h:column>
                             <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Número de Documento"/>
-                                </f:facet>
-                                <h:outputText value="#"/>
+                                <f:facet name="header">tipo de documento</f:facet>
+                                #{cliente.tipoDocumento}
                             </h:column>
                             <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Dirección"/>
-                                </f:facet>
-                                <h:outputText value="#"/>
+                                <f:facet name="header">num de doc</f:facet>
+                                #{cliente.numDocumento}
                             </h:column>
                             <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="País"/>
-                                </f:facet>
-                                <h:outputText value="#"/>
+                                <f:facet name="header">direccion</f:facet>
+                                #{cliente.direccion}
                             </h:column>
                             <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Número Telefónico"/>
-                                </f:facet>
-                                <h:outputText value="#"/>
+                                <f:facet name="header">pais</f:facet>
+                                #{cliente.pais}
                             </h:column>
                             <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Correo Electrónico"/>
-                                </f:facet>
-                                <h:outputText value="#"/>
+                                <f:facet name="header">telefono</f:facet>
+                                #{cliente.telefono}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">email</f:facet>
+                                #{cliente.email}
                             </h:column>
                         </h:dataTable>
                     </h:form>
