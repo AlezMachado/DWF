@@ -1,17 +1,22 @@
 package sv.edu.udb.www.managedbeans;
 
+import jakarta.faces.bean.ManagedBean;
+import jakarta.faces.bean.SessionScoped;
+import sv.edu.udb.www.entities.ClienteEntity;
 import sv.edu.udb.www.models.ClienteModel;
 
 import java.util.List;
+@ManagedBean
+@SessionScoped
 
 public class ClienteBean {
 
     ClienteModel modelCliente = new ClienteModel();
 
 
-    private List<ClienteEntity> Cliente;
+    private List<ClienteEntity> ClienteEntity;
 
-    private ClienteEntity cliente;
+    private ClienteEntity clienteEntity;
 
     public ClienteModel getModelCliente() {
         return modelCliente;
@@ -22,34 +27,34 @@ public class ClienteBean {
     }
 
     public List<ClienteEntity> getCliente() {
-        return Cliente;
+        return ClienteEntity;
     }
 
-    public void setCliente(ClienteEntity cliente) {
-        this.cliente = cliente;
+    public void setCliente(ClienteEntity clienteEntity) {
+        this.clienteEntity = clienteEntity;
     }
 
-    public void setCliente(List<ClienteEntity> cliente) {
-        Cliente = cliente;
+    public void setCliente(List<ClienteEntity> clienteEntity) {
+        ClienteEntity = clienteEntity;
     }
 
     public void agregarCliente() {
 
-        modelCliente.insertarCliente(this.cliente);
+        modelCliente.insertarCliente(this.clienteEntity);
     }
 
     public void editarCliente() {
-        modelCliente.modificarCliente(this.cliente);
+        modelCliente.modificarCliente(this.clienteEntity);
     }
 
     public void eliminarCliente(int idcliente) {
 
         modelCliente.eliminarCliente(idcliente);
-        this.Cliente = modelCliente.listarClientes();
+        this.ClienteEntity = modelCliente.listarClientes();
     }
 
     public void CargarCliente(ClienteEntity cliente){
-        this.cliente = cliente;
+        this.clienteEntity = cliente;
 
     }
 

@@ -6,18 +6,22 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "reserva")
-public class Reserva {
+@NamedQueries(
+        {@NamedQuery(name="ReservaEntity.findAll",query = "SELECT e FROM ReservaEntity  e"),
+                @NamedQuery(name = "ReservaEntity.findById", query = "SELECT e FROM ReservaEntity  e WHERE e.id = :idReserva")})
+
+public class ReservaEntity {
     @Id
     @Column(name = "id_reserva", nullable = false)
     private Integer id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_cliente", nullable = false)
-    private Cliente idCliente;
+    private ClienteEntity idClienteEntity;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_trabajador", nullable = false)
-    private Trabajador idTrabajador;
+    private TrabajadorEntity idTrabajadorEntity;
 
     @Column(name = "tipo_reserva", nullable = false, length = 15)
     private String tipoReserva;
@@ -39,7 +43,7 @@ public class Reserva {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_habitacion", nullable = false)
-    private Habitacion idHabitacion;
+    private HabitacionEntity idHabitacionEntity;
 
     public Integer getId() {
         return id;
@@ -49,20 +53,20 @@ public class Reserva {
         this.id = id;
     }
 
-    public Cliente getIdCliente() {
-        return idCliente;
+    public ClienteEntity getIdCliente() {
+        return idClienteEntity;
     }
 
-    public void setIdCliente(Cliente idCliente) {
-        this.idCliente = idCliente;
+    public void setIdCliente(ClienteEntity idClienteEntity) {
+        this.idClienteEntity = idClienteEntity;
     }
 
-    public Trabajador getIdTrabajador() {
-        return idTrabajador;
+    public TrabajadorEntity getIdTrabajador() {
+        return idTrabajadorEntity;
     }
 
-    public void setIdTrabajador(Trabajador idTrabajador) {
-        this.idTrabajador = idTrabajador;
+    public void setIdTrabajador(TrabajadorEntity idTrabajadorEntity) {
+        this.idTrabajadorEntity = idTrabajadorEntity;
     }
 
     public String getTipoReserva() {
@@ -113,12 +117,12 @@ public class Reserva {
         this.estado = estado;
     }
 
-    public Habitacion getIdHabitacion() {
-        return idHabitacion;
+    public HabitacionEntity getIdHabitacion() {
+        return idHabitacionEntity;
     }
 
-    public void setIdHabitacion(Habitacion idHabitacion) {
-        this.idHabitacion = idHabitacion;
+    public void setIdHabitacion(HabitacionEntity idHabitacionEntity) {
+        this.idHabitacionEntity = idHabitacionEntity;
     }
 
 }

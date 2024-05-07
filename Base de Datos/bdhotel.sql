@@ -24,11 +24,11 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cliente`
+-- Estructura de tabla para la tabla `clienteEntity`
 --
 
-DROP TABLE IF EXISTS `cliente`;
-CREATE TABLE IF NOT EXISTS `cliente` (
+DROP TABLE IF EXISTS `clienteEntity`;
+CREATE TABLE IF NOT EXISTS `clienteEntity` (
   `id_cliente` int NOT NULL AUTO_INCREMENT,
   `nombre_cliente` varchar(75) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `apellido_cliente` varchar(75) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
@@ -176,7 +176,7 @@ ALTER TABLE `pago`
 -- Filtros para la tabla `reserva`
 --
 ALTER TABLE `reserva`
-  ADD CONSTRAINT `reserva_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `reserva_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `clienteEntity` (`id_cliente`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `reserva_ibfk_2` FOREIGN KEY (`id_trabajador`) REFERENCES `trabajador` (`id_trabajador`),
   ADD CONSTRAINT `reserva_ibfk_3` FOREIGN KEY (`id_habitacion`) REFERENCES `habitacion` (`id_habitacion`);
 COMMIT;

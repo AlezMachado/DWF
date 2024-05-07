@@ -1,9 +1,13 @@
 package sv.edu.udb.www.managedbeans;
 
+import jakarta.faces.bean.ManagedBean;
+import jakarta.faces.bean.SessionScoped;
+import sv.edu.udb.www.entities.TrabajadorEntity;
 import sv.edu.udb.www.models.TrabajadorModel;
 
 import java.util.List;
-
+@ManagedBean
+@SessionScoped
 public class TrabajadorBean {
 
     TrabajadorModel modelTrajador = new TrabajadorModel();

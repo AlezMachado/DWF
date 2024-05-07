@@ -7,14 +7,18 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "pago")
-public class Pago {
+@NamedQueries(
+        {@NamedQuery(name="PagoEntity.findAll",query = "SELECT e FROM PagoEntity  e"),
+                @NamedQuery(name = "PagoEntity.findById", query = "SELECT e FROM PagoEntity  e WHERE e.id = :idPago")})
+
+public class PagoEntity {
     @Id
     @Column(name = "id_pago", nullable = false)
     private Integer id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_reserva", nullable = false)
-    private Reserva idReserva;
+    private ReservaEntity idReservaEntity;
 
     @Column(name = "tipo_comprobante", nullable = false, length = 10)
     private String tipoComprobante;
@@ -39,12 +43,12 @@ public class Pago {
         this.id = id;
     }
 
-    public Reserva getIdReserva() {
-        return idReserva;
+    public ReservaEntity getIdReserva() {
+        return idReservaEntity;
     }
 
-    public void setIdReserva(Reserva idReserva) {
-        this.idReserva = idReserva;
+    public void setIdReserva(ReservaEntity idReservaEntity) {
+        this.idReservaEntity = idReservaEntity;
     }
 
     public String getTipoComprobante() {

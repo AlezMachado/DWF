@@ -1,15 +1,16 @@
 package sv.edu.udb.www.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "productos")
-public class Producto {
+@NamedQueries(
+        {@NamedQuery(name="ProductoEntity.findAll",query = "SELECT e FROM ProductoEntity  e"),
+                @NamedQuery(name = "ProductoEntity.findById", query = "SELECT e FROM ProductoEntity  e WHERE e.id = :idProducto")})
+
+public class ProductoEntity {
     @Id
     @Column(name = "id_producto", nullable = false)
     private Integer id;

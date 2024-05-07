@@ -1,9 +1,13 @@
 package sv.edu.udb.www.managedbeans;
 
+import jakarta.faces.bean.ManagedBean;
+import jakarta.faces.bean.SessionScoped;
+import sv.edu.udb.www.entities.HabitacionEntity;
 import sv.edu.udb.www.models.HabitacionModel;
 
 import java.util.List;
-
+@ManagedBean
+@SessionScoped
 public class HabitacionBean {
 
     HabitacionModel modelHabitacion = new HabitacionModel();

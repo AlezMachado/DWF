@@ -3,6 +3,7 @@ package sv.edu.udb.www.models;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Query;
+import sv.edu.udb.www.entities.TrabajadorEntity;
 import sv.edu.udb.www.utils.JpaUtil;
 
 import java.util.List;

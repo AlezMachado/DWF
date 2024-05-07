@@ -1,10 +1,15 @@
 package sv.edu.udb.www.managedbeans;
 
+import jakarta.faces.bean.ManagedBean;
+import jakarta.faces.bean.SessionScoped;
+import sv.edu.udb.www.entities.PagoEntity;
+import sv.edu.udb.www.entities.ReservaEntity;
 import sv.edu.udb.www.models.PagoModel;
 import sv.edu.udb.www.models.ReservaModel;
 
 import java.util.List;
-
+@ManagedBean
+@SessionScoped
 public class PagoBean {
     PagoModel modelPago = new PagoModel();
     ReservaModel modelReserva = new ReservaModel();
@@ -56,12 +61,12 @@ public class PagoBean {
     }
 
     public void agregarPago() {
-        this.pago.setReservaByIdreserva(modelReserva.obtenerReserva(this.reserva.getIdreserva()));
-        modelPago.insertarPago(this.pago);
+        this.pago.setIdReserva(modelReserva.obtenerReserva(this.reserva.getId()));
+         modelPago.insertarPago(this.pago);
     }
 
     public void editarPago() {
-        this.pago.setReservaByIdreserva(modelReserva.obtenerReserva(this.reserva.getIdreserva()));
+        this.pago.setIdReserva(modelReserva.obtenerReserva(this.reserva.getId()));
         modelPago.modificarPago(this.pago);
         this.pago = null;
 

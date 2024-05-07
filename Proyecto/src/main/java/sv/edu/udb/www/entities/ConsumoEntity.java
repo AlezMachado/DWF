@@ -6,18 +6,22 @@ import java.math.BigDecimal;
 
 @Entity
 @Table(name = "consumo")
-public class Consumo {
+@NamedQueries(
+        {@NamedQuery(name="ConsumoEntity.findAll",query = "SELECT e FROM ConsumoEntity  e"),
+                @NamedQuery(name = "ConsumoEntity.findById", query = "SELECT e FROM ConsumoEntity  e WHERE e.id = :id_consumo")})
+
+public class ConsumoEntity {
     @Id
     @Column(name = "id_consumo", nullable = false)
     private Integer id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_reserva", nullable = false)
-    private Reserva idReserva;
+    private ReservaEntity idReservaEntity;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_producto", nullable = false)
-    private Producto idProducto;
+    private ProductoEntity idProductoEntity;
 
     @Column(name = "cantidad", nullable = false)
     private Integer cantidad;
@@ -36,20 +40,20 @@ public class Consumo {
         this.id = id;
     }
 
-    public Reserva getIdReserva() {
-        return idReserva;
+    public ReservaEntity getIdReserva() {
+        return idReservaEntity;
     }
 
-    public void setIdReserva(Reserva idReserva) {
-        this.idReserva = idReserva;
+    public void setIdReserva(ReservaEntity idReservaEntity) {
+        this.idReservaEntity = idReservaEntity;
     }
 
-    public Producto getIdProducto() {
-        return idProducto;
+    public ProductoEntity getIdProducto() {
+        return idProductoEntity;
     }
 
-    public void setIdProducto(Producto idProducto) {
-        this.idProducto = idProducto;
+    public void setIdProducto(ProductoEntity idProductoEntity) {
+        this.idProductoEntity = idProductoEntity;
     }
 
     public Integer getCantidad() {

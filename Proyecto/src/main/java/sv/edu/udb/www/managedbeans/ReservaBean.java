@@ -1,12 +1,19 @@
 package sv.edu.udb.www.managedbeans;
 
+import jakarta.faces.bean.ManagedBean;
+import jakarta.faces.bean.SessionScoped;
+import sv.edu.udb.www.entities.ClienteEntity;
+import sv.edu.udb.www.entities.HabitacionEntity;
+import sv.edu.udb.www.entities.ReservaEntity;
+import sv.edu.udb.www.entities.TrabajadorEntity;
 import sv.edu.udb.www.models.ClienteModel;
 import sv.edu.udb.www.models.HabitacionModel;
 import sv.edu.udb.www.models.ReservaModel;
 import sv.edu.udb.www.models.TrabajadorModel;
 
 import java.util.List;
-
+@ManagedBean
+@SessionScoped
 public class ReservaBean {
 
     ReservaModel modelReserva = new ReservaModel();
@@ -104,17 +111,15 @@ public class ReservaBean {
     }
 
     public void agregarReserva() {
-        this.reserva.setHabitacionByIdhabitacion(modelHabitacion.obtenerhabitacion(this.habitacion.getIdhabitacion()));
-        this.reserva.setClienteByIdcliente(modelCliente.obtenerCliente(this.cliente.getIdpersona()));
-        this.reserva.setTrabajadorByIdtrabajador(modelTrabajador.obtenerTrabajador(this.trabajador.getIdpersona()));
+        this.reserva.setIdCliente(modelCliente.obtenerCliente(this.cliente.getId()));
+        this.reserva.setIdTrabajador(modelTrabajador.obtenerTrabajador(this.trabajador.getId()));
         modelReserva.insertarReserva(this.reserva);
 
     }
 
     public void editarReserva() {
-        this.reserva.setHabitacionByIdhabitacion(modelHabitacion.obtenerhabitacion(this.habitacion.getIdhabitacion()));
-        this.reserva.setClienteByIdcliente(modelCliente.obtenerCliente(this.cliente.getIdpersona()));
-        this.reserva.setTrabajadorByIdtrabajador(modelTrabajador.obtenerTrabajador(this.trabajador.getIdpersona()));
+        this.reserva.setIdCliente(modelCliente.obtenerCliente(this.cliente.getId()));
+        this.reserva.setIdTrabajador(modelTrabajador.obtenerTrabajador(this.trabajador.getId()));
         modelReserva.modificarReserva(this.reserva);
         this.reserva = null;
     }

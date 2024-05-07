@@ -1,13 +1,14 @@
 package sv.edu.udb.www.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "cliente")
-public class Cliente {
+@NamedQueries(
+        {@NamedQuery(name="ClienteEntity.findAll",query = "SELECT e FROM ClienteEntity  e"),
+                @NamedQuery(name = "ClienteEntity.findById", query = "SELECT e FROM ClienteEntity  e WHERE e.id = :id_cliente")})
+
+public class ClienteEntity {
     @Id
     @Column(name = "id_cliente", nullable = false)
     private Integer id;

@@ -1,14 +1,19 @@
 package sv.edu.udb.www.managedbeans;
 
+import jakarta.faces.bean.ManagedBean;
+import jakarta.faces.bean.SessionScoped;
+import sv.edu.udb.www.entities.ProductoEntity;
 import sv.edu.udb.www.models.ProductoModel;
 
 import java.util.List;
-
+@ManagedBean
+@SessionScoped
 public class ProductoBean {
 
     ProductoModel modelProducto = new ProductoModel();
 
     private List<ProductoEntity> Producto;
+
     private ProductoEntity producto;
 
     public ProductoModel getModelProducto() {
@@ -40,7 +45,8 @@ public class ProductoBean {
         modelProducto.modificarProductos(this.producto);
     }
 
-    public void eliminarProducto(int idproducto) {
+    public void eliminarProducto(int idproducto)
+    {
 
         modelProducto.eliminarProducto(idproducto);
         this.Producto =  modelProducto.listarProductos();

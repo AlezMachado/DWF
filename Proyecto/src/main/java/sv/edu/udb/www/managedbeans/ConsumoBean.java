@@ -1,10 +1,17 @@
 package sv.edu.udb.www.managedbeans;
 
+import jakarta.faces.bean.ManagedBean;
+import jakarta.faces.bean.SessionScoped;
+import sv.edu.udb.www.entities.ConsumoEntity;
+import sv.edu.udb.www.entities.ProductoEntity;
+import sv.edu.udb.www.entities.ReservaEntity;
 import sv.edu.udb.www.models.ConsumoModel;
 import sv.edu.udb.www.models.ProductoModel;
 import sv.edu.udb.www.models.ReservaModel;
 
 import java.util.List;
+@ManagedBean
+@SessionScoped
 
 public class ConsumoBean {
 
@@ -82,25 +89,26 @@ public class ConsumoBean {
 
 
     public void agregarConsumo() {
-        this.consumo.setReservaByIdreserva(modelReserva.obtenerReserva(this.reserva.getIdreserva()));
-        this.consumo.setProductoByIdproducto(modelProducto.obtenerProducto(this.producto.getIdproducto()));
-        modelConsumo.insertarconsumo(this.consumo);
+        this.consumo.setIdReserva(modelReserva.obtenerReserva(this.reserva.getId()));
+        this.consumo.setIdProducto(modelProducto.obtenerProducto(this.producto.getId()));
+         modelConsumo.insertarconsumo(this.consumo);
     }
 
     public void editarConsumo() {
-        this.consumo.setReservaByIdreserva(modelReserva.obtenerReserva(this.reserva.getIdreserva()));
-        this.consumo.setProductoByIdproducto(modelProducto.obtenerProducto(this.producto.getIdproducto()));
+        this.consumo.setIdReserva(modelReserva.obtenerReserva(this.reserva.getId()));
+        this.consumo.setIdProducto(modelProducto.obtenerProducto(this.producto.getId()));
         modelConsumo.modificarConsumo(this.consumo);
         this.consumo = null;
 
     }
-    public void eliminarConsumo(int idconsumo){
+
+    public void eliminarConsumo(int idconsumo) {
         modelConsumo.eliminarConsumo(idconsumo);
         this.Consumo = modelConsumo.listarconsumos();
 
     }
 
-    public void cargarConsumo(ConsumoEntity consumo){
+    public void cargarConsumo(ConsumoEntity consumo) {
         this.consumo = consumo;
     }
 }
