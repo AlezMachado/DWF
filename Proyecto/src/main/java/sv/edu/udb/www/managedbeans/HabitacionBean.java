@@ -2,57 +2,50 @@ package sv.edu.udb.www.managedbeans;
 
 import jakarta.faces.bean.ManagedBean;
 import jakarta.faces.bean.SessionScoped;
+import sv.edu.udb.www.entities.ClienteEntity;
 import sv.edu.udb.www.entities.HabitacionEntity;
 import sv.edu.udb.www.models.HabitacionModel;
 
 import java.util.List;
+
 @ManagedBean
 @SessionScoped
 public class HabitacionBean {
 
-    HabitacionModel modelHabitacion = new HabitacionModel();
+    private HabitacionModel modelHabitacion = new HabitacionModel();
+    private List<HabitacionEntity> habitaciones;
+    private HabitacionEntity habitacion = new HabitacionEntity();
 
-    private List<HabitacionEntity> Habitacion;
-    private HabitacionEntity habitacion;
-
-
-    public HabitacionModel getModelHabitacion() {
-        return modelHabitacion;
+    public List<HabitacionEntity> getHabitaciones() {
+        return habitaciones;
     }
 
-    public void setModelHabitacion(HabitacionModel modelHabitacion) {
-        this.modelHabitacion = modelHabitacion;
+    public void setHabitaciones(List<HabitacionEntity> habitaciones) {
+        this.habitaciones = habitaciones;
     }
 
-    public List<HabitacionEntity> getHabitacion() {
-        return Habitacion;
+    public HabitacionEntity getHabitacion() {
+        return habitacion;
     }
 
     public void setHabitacion(HabitacionEntity habitacion) {
         this.habitacion = habitacion;
     }
 
-    public void setHabitacion(List<HabitacionEntity> habitacion) {
-        Habitacion = habitacion;
-    }
-
     public void agregarHabitacion() {
-
-        modelHabitacion.insertarhabitacion(this.habitacion);
+        modelHabitacion.insertarhabitacion(habitacion);
     }
 
     public void editarHabitacion() {
-        modelHabitacion.modificarHabitacion(this.habitacion);
+        modelHabitacion.modificarHabitacion(habitacion);
     }
 
-    public void eliminarHabitacion(int idhabitacion) {
-
-        modelHabitacion.eliminarHabitacion(idhabitacion);
-        this.Habitacion = modelHabitacion.listarhabitaciones();
+    public void eliminarHabitacion(int idHabitacion) {
+        modelHabitacion.eliminarHabitacion(idHabitacion);
+        habitaciones = modelHabitacion.listarhabitaciones();
     }
 
-    public void cargarHabitacion(HabitacionEntity habitacion) {
-        this.habitacion = habitacion;
-
+    public void cargarHabitaciones() {
+        habitaciones = modelHabitacion.listarhabitaciones();
     }
 }

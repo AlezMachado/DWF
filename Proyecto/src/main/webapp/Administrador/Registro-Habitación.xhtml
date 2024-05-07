@@ -9,7 +9,9 @@
 
 
 <h:head>
-
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{habitacionBean.cargarHabitaciones()}" />
+    </f:metadata>
     <title>Administración Hotel Intercontinental</title>
     <h:outputStylesheet name="css/InicioAdmin.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
@@ -58,7 +60,7 @@
                                 <h:outputLabel for="numhabit" styleClass="formulario__label" value="Número de Habitación:"/>
                                 <div class="formulario__grupo-input">
                                     <h:inputText id="numhabit" styleClass="form-control" required="true"
-                                                 requiredMessage="Ingresa el Número de la Habitación"/>
+                                                 requiredMessage="Ingresa el Número de la Habitación" value="#{habitacionBean.habitacion.numeroHabitacion}"/>
                                 </div>
                             </div>
                         </div>
@@ -68,7 +70,7 @@
                                 <h:outputLabel for="pisohabit" styleClass="formulario__label" value="Nivel de la Habitación:"/>
                                 <div class="formulario__grupo-input">
                                     <h:inputText id="pisohabit" styleClass="form-control" required="true"
-                                                 requiredMessage="Ingresa el Nivel de la Habitación"/>
+                                                 requiredMessage="Ingresa el Nivel de la Habitación" value="#{habitacionBean.habitacion.piso}"/>
                                 </div>
                             </div>
                         </div>
@@ -78,7 +80,7 @@
                                 <h:outputLabel for="descrihabit" styleClass="formulario__label" value="Descripción de la Habitación:"/>
                                 <div class="formulario__grupo-input">
                                     <h:inputText id="descrihabit" styleClass="form-control" required="true"
-                                                 requiredMessage="Ingresa una breve Descripción de la Habitación"/>
+                                                 requiredMessage="Ingresa una breve Descripción de la Habitación" value="#{habitacionBean.habitacion.descripcion}"/>
                                 </div>
                             </div>
                         </div>
@@ -88,7 +90,7 @@
                                 <h:outputLabel for="preciohabit" styleClass="formulario__label" value="Precio diario de la Habitación:"/>
                                 <div class="formulario__grupo-input">
                                     <h:inputText id="preciohabit" styleClass="form-control" required="true"
-                                                 requiredMessage="Ingresa el Valor diario de la Habitación"/>
+                                                 requiredMessage="Ingresa el Valor diario de la Habitación" value="#{habitacionBean.habitacion.precioDiario}"/>
                                 </div>
                             </div>
                         </div>
@@ -96,11 +98,11 @@
                         <div class="formulario__grupo" id="grupo__estadohabit">
                             <div class="col">
                                 <h:outputLabel for="estado" value="Estado de la habitacion"/>
-                                <h:selectOneMenu id="estado" styleClass="form-control">
-                                    <f:selectItem itemValue="o" itemLabel="Ocupada"/>
-                                    <f:selectItem itemValue="m" itemLabel="Mantenimiento"/>
-                                    <f:selectItem itemValue="d" itemLabel="Disponible"/>
-                                    <f:selectItem itemValue="b" itemLabel="De Baja"/>
+                                <h:selectOneMenu id="estado" styleClass="form-control" value="#{habitacionBean.habitacion.estado}">
+                                    <f:selectItem itemValue="Ocupada" itemLabel="Ocupada"/>
+                                    <f:selectItem itemValue="Mantenimiento" itemLabel="Mantenimiento"/>
+                                    <f:selectItem itemValue="Disponible" itemLabel="Disponible"/>
+                                    <f:selectItem itemValue="De Baja" itemLabel="De Baja"/>
                                 </h:selectOneMenu>
                             </div>
                         </div>
@@ -109,67 +111,59 @@
                         <div class="formulario__grupo" id="grupo__tipohabit">
                             <div class="col">
                                 <h:outputLabel for="tipo" value="Tipo de la habitacion"/>
-                                <h:selectOneMenu id="tipo" styleClass="form-control">
-                                    <f:selectItem itemValue="i" itemLabel="Individuales"/>
-                                    <f:selectItem itemValue="d" itemLabel="Dobles"/>
-                                    <f:selectItem itemValue="t" itemLabel="Triples"/>
-                                    <f:selectItem itemValue="c" itemLabel="Cuádruples"/>
-                                    <f:selectItem itemValue="s" itemLabel="Suite"/>
-                                    <f:selectItem itemValue="j" itemLabel="Junios Suite"/>
-                                    <f:selectItem itemValue="g" itemLabel="Gran Suite"/>
+                                <h:selectOneMenu id="tipo" styleClass="form-control" value="#{habitacionBean.habitacion.tipoHabitacion}">
+                                    <f:selectItem itemValue="Individuales" itemLabel="Individuales"/>
+                                    <f:selectItem itemValue="Dobles" itemLabel="Dobles"/>
+                                    <f:selectItem itemValue="Triples" itemLabel="Triples"/>
+                                    <f:selectItem itemValue="Cuádruples" itemLabel="Cuádruples"/>
+                                    <f:selectItem itemValue="Suite" itemLabel="Suite"/>
+                                    <f:selectItem itemValue="Junios Suite" itemLabel="Junios Suite"/>
+                                    <f:selectItem itemValue="Gran Suite" itemLabel="Gran Suite"/>
                                 </h:selectOneMenu>
                             </div>
                         </div>
                         <br/>
                         <h:panelGrid columns="4">
                             <h:commandButton styleClass="btn btn-primary center-block" value="Guardar"
-                                             action="#"/>
+                                             action="#{habitacionBean.agregarHabitacion()}"/>
                             <h:commandButton styleClass="btn btn-primary center-block" value="Consultar Habitacion"
-                                             action="#"/>
+                                             action="#{habitacionBean.cargarHabitacion()}"/>
                             <h:commandButton styleClass="btn btn-primary center-block" value="Eliminar"
-                                             action="#"/>
+                                             action="#{habitacionBean.eliminarHabitacion()}"/>
                             <h:commandButton styleClass="btn btn-primary center-block" value="Actualizar"
-                                             action="#"/>
+                                             action="#{habitacionBean.editarHabitacion()}"/>
                         </h:panelGrid>
 
                         <br/>
 
-                        <h:dataTable styleClass="table table-striped" var="" value="#">
+                        <h:dataTable   value="#{habitacionBean.habitaciones}" var="habitacion">
                             <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Número de la Habitación"/>
-                                </f:facet>
-                                <h:outputText value="#"/>
+                                <f:facet name="header">ID</f:facet>
+                                #{habitacion.id}
                             </h:column>
                             <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Nivel de la Habitación"/>
-                                </f:facet>
-                                <h:outputText value="#"/>
+                                <f:facet name="header">n~ habitacion</f:facet>
+                                #{habitacion.numeroHabitacion}
                             </h:column>
                             <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Descripción"/>
-                                </f:facet>
-                                <h:outputText value="#"/>
+                                <f:facet name="header">piso</f:facet>
+                                #{habitacion.piso}
                             </h:column>
                             <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Precio de la Habitación"/>
-                                </f:facet>
-                                <h:outputText value="#"/>
+                                <f:facet name="header">descripcion</f:facet>
+                                #{habitacion.descripcion}
                             </h:column>
                             <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Estado de la Habitación"/>
-                                </f:facet>
-                                <h:outputText value="#"/>
+                                <f:facet name="header">precio diario</f:facet>
+                                #{habitacion.precioDiario}
                             </h:column>
                             <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Tipo de Habitación"/>
-                                </f:facet>
-                                <h:outputText value="#"/>
+                                <f:facet name="header">estado</f:facet>
+                                #{habitacion.estado}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">tipo de habitacion</f:facet>
+                                #{habitacion.tipoHabitacion}
                             </h:column>
                         </h:dataTable>
                     </h:form>

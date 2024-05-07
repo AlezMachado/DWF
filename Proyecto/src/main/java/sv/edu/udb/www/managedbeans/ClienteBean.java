@@ -20,7 +20,7 @@ public class ClienteBean {
     private ClienteEntity cliente;
 
     public ClienteBean() {
-        cliente = new ClienteEntity(); // Inicializar la instancia de cliente
+        cliente = new ClienteEntity();
     }
 
     public ClienteModel getModelCliente() {
