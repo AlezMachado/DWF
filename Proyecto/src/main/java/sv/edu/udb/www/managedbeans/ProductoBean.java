@@ -10,11 +10,16 @@ import java.util.List;
 @SessionScoped
 public class ProductoBean {
 
+
     ProductoModel modelProducto = new ProductoModel();
 
-    private List<ProductoEntity> Producto;
+    private List<ProductoEntity> productos;
 
     private ProductoEntity producto;
+
+    public ProductoBean() {
+        producto = new ProductoEntity();
+    }
 
     public ProductoModel getModelProducto() {
         return modelProducto;
@@ -24,16 +29,20 @@ public class ProductoBean {
         this.modelProducto = modelProducto;
     }
 
-    public List<ProductoEntity> getProducto() {
-        return Producto;
+    public List<ProductoEntity> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<ProductoEntity> productos) {
+        this.productos = productos;
+    }
+
+    public ProductoEntity getProducto() {
+        return producto;
     }
 
     public void setProducto(ProductoEntity producto) {
         this.producto = producto;
-    }
-
-    public void setProducto(List<ProductoEntity> producto) {
-        Producto = producto;
     }
 
     public void agregarProducto() {
@@ -49,11 +58,10 @@ public class ProductoBean {
     {
 
         modelProducto.eliminarProducto(idproducto);
-        this.Producto =  modelProducto.listarProductos();
+        this.productos =  modelProducto.listarProductos();
     }
 
-    public void CargarProducto(ProductoEntity producto){
-        this.producto = producto;
-
+    public void cargarProductos(){
+        productos = modelProducto.listarProductos();
     }
 }

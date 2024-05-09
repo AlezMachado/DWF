@@ -101,7 +101,7 @@
                                 <h3>feacha reserva</h3>
                                     <div class="formulario__grupo-input">
                                         <h:outputLabel  styleClass="formulario__label" value="feacha reserva:"/>
-                                        <h:inputText styleClass="form-control"  a:type="date" value="#{reservaBean.reserva}" var="reserva" itemLabel="#{reserva.fechaReserva}" itemValue="#{reserva.id}"/>
+                                        <h:inputText styleClass="form-control"  a:type="date" value="#{reservaBean.reserva}" var="reserva" itemLabel="#{reserva.fechaReserva}" itemValue="#{reserva.fechaReserva}"/>
 
                                     </div>
                             </div>
@@ -112,7 +112,7 @@
                             <div class="col">
                                 <h:outputLabel for="fechingreso" styleClass="formulario__label" value="Fecha de Ingreso:"/>
                                 <div class="formulario__grupo-input">
-                                    <h:inputText id="fechingreso" a:type="date"  value="#{reservaBean.reserva}" var="reserva" itemLabel="#{reserva.fechaIngreso}" itemValue="#{reserva.id}"
+                                    <h:inputText id="fechingreso" a:type="date"  value="#{reservaBean.reserva}" var="reserva" itemLabel="#{reserva.fechaIngreso}" itemValue="#{reserva.fechaIngreso}"
                                                  requiredMessage="Ingresa la Fecha de Ingreso" styleClass="form-control" >
 
                                     </h:inputText>
@@ -122,7 +122,7 @@
                         <!-- Grupo: TIPO DE RESERVA -->
                         <div class="formulario__grupo" id="grupo__reserva">
                             <div class="col">
-                                <h:outputLabel for="tiposreser" value="#{reservaBean.reserva}" var="reserva" itemLabel="#{reserva.tipoReserva}" itemValue="#{reserva.id}"/>
+                                <h:outputLabel for="tiposreser" value="#{reservaBean.reserva}" var="reserva" itemLabel="#{reserva.tipoReserva}" itemValue="#{reserva.tipoReserva}"/>
                                 <h:selectOneMenu id="tiposreser" styleClass="form-control">
                                     <f:selectItem itemValue="t" itemLabel="Reservación Tentativa"/>
                                     <f:selectItem itemValue="l" itemLabel="Reservación Limite"/>
@@ -139,7 +139,7 @@
                             <div class="col">
                                 <h:outputLabel for="preciohabit" styleClass="formulario__label" value="Precio diario de la Habitación:"/>
                                 <div class="formulario__grupo-input">
-                                    <h:inputText id="preciohabit" a:type="number" styleClass="form-control"   value="#{reservaBean.reserva}" var="reserva" itemLabel="#{reserva.costoAlojamiento}" itemValue="#{reserva.id}"
+                                    <h:inputText id="preciohabit" a:type="number" styleClass="form-control"   value="#{reservaBean.reserva}" var="reserva" itemLabel="#{reserva.costoAlojamiento}" itemValue="#{reserva.costoAlojamiento}"
                                                  required="true"
                                                  requiredMessage="Ingresa el Valor diario de la Habitación"/>
                                 </div>
@@ -149,7 +149,7 @@
                         <div class="formulario__grupo" id="grupo__estadohabit">
                             <div class="col">
                                 <h:outputLabel for="estado" value="Estado de la habitacion"/>
-                                <h:selectOneMenu id="estado" styleClass="form-control" value="#{reservaBean.reserva}" var="reserva" itemLabel="#{reserva.estado}" itemValue="#{reserva.id}">
+                                <h:selectOneMenu id="estado" styleClass="form-control" value="#{reservaBean.reserva}" var="reserva" itemLabel="#{reserva.estado}" itemValue="#{reserva.estado}">
                                     <f:selectItem itemValue="o" itemLabel="Ocupada"/>
                                     <f:selectItem itemValue="m" itemLabel="Mantenimiento"/>
                                     <f:selectItem itemValue="d" itemLabel="Disponible"/>

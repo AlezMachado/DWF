@@ -9,6 +9,9 @@
 
 
 <h:head>
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{productoBean.cargarProductos()}" />
+    </f:metadata>
     <title>Administración Hotel Intercontinental</title>
     <h:outputStylesheet name="css/InicioAdmin.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
@@ -57,7 +60,7 @@
                                 <h:outputLabel for="nombre" styleClass="formulario__label" value="Nombre del Producto:"/>
                                 <div class="formulario__grupo-input">
                                     <h:inputText id="nombre" styleClass="form-control" required="true"
-                                                 requiredMessage="Debes ingresar el Nombre del Producto"/>
+                                                 requiredMessage="Debes ingresar el Nombre del Producto" value="#{productoBean.producto.nombreProd}" />
                                 </div>
                             </div>
                         </div>
@@ -67,7 +70,7 @@
                                 <h:outputLabel for="apellido" styleClass="formulario__label" value="Descripción del Producto:"/>
                                 <div class="formulario__grupo-input">
                                     <h:inputText id="apellido" styleClass="form-control" required="true"
-                                                 requiredMessage="Debes ingresar la descripción del Producto"/>
+                                                 requiredMessage="Debes ingresar la descripción del Producto" value="#{productoBean.producto.descripcionProd}"/>
                                 </div>
                             </div>
                         </div>
@@ -77,7 +80,7 @@
                                 <h:outputLabel for="precio" styleClass="formulario__label" value="Precio de venta del Producto:"/>
                                 <div class="formulario__grupo-input">
                                     <h:inputText id="precio" styleClass="form-control" required="true"
-                                                 requiredMessage="Ingresa el Precio de venta del Producto"/>
+                                                 requiredMessage="Ingresa el Precio de venta del Producto" value="#{productoBean.producto.precioVenta}" />
                                 </div>
                             </div>
                         </div>
@@ -87,14 +90,14 @@
                                 <h:outputLabel for="direccion" styleClass="formulario__label" value="Cantidad:"/>
                                 <div class="formulario__grupo-input">
                                     <h:inputText id="direccion" styleClass="form-control" required="true"
-                                                 requiredMessage="Debes de ingresar la Cantidad del Producto"/>
+                                                 requiredMessage="Debes de ingresar la Cantidad del Producto" value="#{productoBean.producto.cantidad}"/>
                                 </div>
                             </div>
                         </div>
                         <br/>
                         <h:panelGrid columns="4">
                             <h:commandButton styleClass="btn btn-primary center-block" value="Guardar"
-                                             action="#"/>
+                                             action="#{productoBean.agregarProducto()}"/>
                             <h:commandButton styleClass="btn btn-primary center-block" value="Consultar Productos"
                                              action="#"/>
                             <h:commandButton styleClass="btn btn-primary center-block" value="Eliminar"
@@ -103,30 +106,30 @@
                                              action="#"/>
                         </h:panelGrid>
                         <br/>
-                        <h:dataTable styleClass="table table-striped" var="" value="#">
+                        <h:dataTable styleClass="table table-striped" value="#{productoBean.productos}" var="producto">
                             <h:column>
                                 <f:facet name="header">
                                     <h:outputText value="Nombre del Producto"/>
                                 </f:facet>
-                                <h:outputText value="#"/>
+                                #{producto.nombreProd}
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
                                     <h:outputText value="Descripción del Producto"/>
                                 </f:facet>
-                                <h:outputText value="#"/>
+                                #{producto.descripcionProd}
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
                                     <h:outputText value="Precio de Venta del Producto"/>
                                 </f:facet>
-                                <h:outputText value="#"/>
+                                #{producto.precioVenta}
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
                                     <h:outputText value="Cantidad del Producto"/>
                                 </f:facet>
-                                <h:outputText value="#"/>
+                                #{producto.cantidad}
                             </h:column>
                         </h:dataTable>
                     </h:form>

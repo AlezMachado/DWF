@@ -20,7 +20,7 @@ public class ReservaBean {
     HabitacionModel modelHabitacion = new HabitacionModel();
     ClienteModel modelCliente = new ClienteModel();
     TrabajadorModel modelTrabajador = new TrabajadorModel();
-    private List<ReservaEntity> Reserva;
+    private List<ReservaEntity> reservas;
     private List<HabitacionEntity> Habitacion;
     private List<ClienteEntity> Cliente;
     private List<TrabajadorEntity> Trabajador;
@@ -69,7 +69,7 @@ public class ReservaBean {
     }
 
     public List<ReservaEntity> getReserva() {
-        return Reserva;
+        return reservas;
     }
 
     public void setReserva(ReservaEntity reserva) {
@@ -77,7 +77,7 @@ public class ReservaBean {
     }
 
     public void setReserva(List<ReservaEntity> reserva) {
-        Reserva = reserva;
+        reservas = reserva;
     }
 
     public List<HabitacionEntity> getHabitacion() {
@@ -134,13 +134,13 @@ public class ReservaBean {
 
     public void eliminarReserva(int idreserva) {
         modelReserva.eliminarReserva(idreserva);
-        this.Reserva = modelReserva.listarReserva();
+        this.reservas = modelReserva.listarReserva();
 
 
     }
 
     public void cargarReserva() {
-        Reserva = modelReserva.listarReserva();
+        reservas = modelReserva.listarReserva();
     }
 
 }
