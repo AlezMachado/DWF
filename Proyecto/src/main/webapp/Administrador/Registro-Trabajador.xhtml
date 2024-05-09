@@ -9,6 +9,9 @@
 
 
 <h:head>
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{trabajadorBean.cargarTrabajadores()}" />
+    </f:metadata>
     <title>Administración Hotel Intercontinental</title>
     <h:outputStylesheet name="css/InicioAdmin.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
@@ -53,13 +56,13 @@
                     <h:form>
                         <!-- Grupo: Nombre -->
                         <div class="formulario__grupo" id="grupo__nombre">
-                            <div class="col">
-                                <h:outputLabel for="nombre" styleClass="formulario__label" value="Nombres:"/>
-                                <div class="formulario__grupo-input">
-                                    <h:inputText id="nombre" styleClass="form-control" required="true"
-                                                 requiredMessage="Debes ingresar los Nombres del Trabajador"/>
-                                </div>
+                        <div class="col">
+                            <h3>Nombres de los trabjadores</h3>
+                            <div class="formulario__grupo-input">
+                                <h:inputText id="nombre" styleClass="form-control" required="true"
+                                             requiredMessage="Ingresa el Número de la Habitación" value="#{trabajadorBean.trabajador.nombreTrabajador}"/>
                             </div>
+                        </div>
                         </div>
                         <!-- Grupo: Apellido -->
                         <div class="formulario__grupo" id="grupo__apellido">
@@ -67,7 +70,7 @@
                                 <h:outputLabel for="apellido" styleClass="formulario__label" value="Apellidos:"/>
                                 <div class="formulario__grupo-input">
                                     <h:inputText id="apellido" styleClass="form-control" required="true"
-                                                 requiredMessage="Debes ingresar los Apellidos del Trabajador"/>
+                                                 requiredMessage="Debes ingresar los Apellidos del Trabajador" value="#{trabajadorBean.trabajador.apellidoTrabajador}"/>
                                 </div>
                             </div>
                         </div>
@@ -75,10 +78,10 @@
                         <div class="formulario__grupo" id="grupo__cargotrabj">
                             <div class="col">
                                 <h:outputLabel for="cargo" value="Cargo del Trabajador"/>
-                                <h:selectOneMenu id="cargo" styleClass="form-control">
-                                    <f:selectItem itemValue="a" itemLabel="Administrador"/>
-                                    <f:selectItem itemValue="s" itemLabel="Secretaria"/>
-                                    <f:selectItem itemValue="e" itemLabel="Empleado"/>
+                                <h:selectOneMenu id="cargo" styleClass="form-control" value="#{trabajadorBean.trabajador.cargo}">
+                                    <f:selectItem itemValue="admin" itemLabel="Administrador"/>
+                                    <f:selectItem itemValue="secretaria" itemLabel="Secretaria"/>
+                                    <f:selectItem itemValue="empleado" itemLabel="Empleado"/>
                                 </h:selectOneMenu>
                             </div>
                         </div>
@@ -88,7 +91,7 @@
                                 <h:outputLabel for="logintra" styleClass="formulario__label" value="Login:"/>
                                 <div class="formulario__grupo-input">
                                     <h:inputText id="logintra" styleClass="form-control" required="true"
-                                                 requiredMessage="Debes de ingresar un Login"/>
+                                                 requiredMessage="Debes de ingresar un Login" value="#{trabajadorBean.trabajador.login}"/>
                                 </div>
                             </div>
                         </div>
@@ -98,14 +101,14 @@
                                 <h:outputLabel for="passwordtrab" styleClass="formulario__label" value="Password:"/>
                                 <div class="formulario__grupo-input">
                                     <h:inputText id="passwordtrab" styleClass="form-control" required="true"
-                                                 requiredMessage="Debes de ingresas tu Password"/>
+                                                 requiredMessage="Debes de ingresas tu Password" value="#{trabajadorBean.trabajador.password}"/>
                                 </div>
                             </div>
                         </div>    <!-- Grupo: ESTADO TRABAJADOR -->
                         <div class="formulario__grupo" id="grupo__estadotrab">
                             <div class="col">
                                 <h:outputLabel for="estado" value="Estado del Trabajador"/>
-                                <h:selectOneMenu id="estado" styleClass="form-control">
+                                <h:selectOneMenu id="estado" styleClass="form-control" value="#{trabajadorBean.trabajador.estado}">
                                     <f:selectItem itemValue="a" itemLabel="Activo"/>
                                     <f:selectItem itemValue="i" itemLabel="Inactivo"/>
                                 </h:selectOneMenu>
@@ -114,7 +117,7 @@
                         <br/>
                         <h:panelGrid columns="4">
                             <h:commandButton styleClass="btn btn-primary center-block" value="Guardar"
-                                             action="#"/>
+                                             action="#{trabajadorBean.agregarTrabajador()}"/>
                             <h:commandButton styleClass="btn btn-primary center-block" value="Consultar Trabajador"
                                              action="#"/>
                             <h:commandButton styleClass="btn btn-primary center-block" value="Eliminar"
@@ -125,30 +128,22 @@
 
                         <br/>
 
-                        <h:dataTable styleClass="table table-striped" var="" value="#">
+                        <h:dataTable styleClass="table table-striped" value="#{trabajadorBean.trabajadores}" var="trabajador">
                             <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Nombres del Trabajador"/>
-                                </f:facet>
-                                <h:outputText value="#"/>
+                                <f:facet name="header">Nombre</f:facet>
+                                #{trabajador.nombreTrabajador}
                             </h:column>
                             <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Apellidos del Trabajador"/>
-                                </f:facet>
-                                <h:outputText value="#"/>
+                                <f:facet name="header">Apellidos</f:facet>
+                                #{trabajador.apellidoTrabajador}
                             </h:column>
                             <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Cargo del Trabajador"/>
-                                </f:facet>
-                                <h:outputText value="#"/>
+                                <f:facet name="header">Cargo del Trabajador</f:facet>
+                                #{trabajador.cargo}
                             </h:column>
                             <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Estado del Trabajador"/>
-                                </f:facet>
-                                <h:outputText value="#"/>
+                                <f:facet name="header">Estado del Trabajador</f:facet>
+                                #{trabajador.estado}
                             </h:column>
                         </h:dataTable>
                     </h:form>

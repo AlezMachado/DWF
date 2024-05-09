@@ -11,6 +11,10 @@
 
 
 <h:head>
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{reservaBean.cargarReserva()}" />
+
+    </f:metadata>
     <title>Administración Hotel Intercontinental</title>
     <h:outputStylesheet name="css/InicioAdmin.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
@@ -59,7 +63,9 @@
                                 <h:outputLabel for="clientForm:nombr" value="Nombre del Cliente"></h:outputLabel>
                                 <br/>
                                 <h:selectOneMenu >
-                                    <f:selectItems />
+                                    <h:outputLabel >nopmbre</h:outputLabel>
+                                    <f:selectItems value="#{reservaBean.modelCliente.listarClientes()}" var="cliente" itemLabel="#{cliente.nombreCliente}" itemValue="#{cliente}"/>
+
                                 </h:selectOneMenu>
 
                             </div>
@@ -71,7 +77,8 @@
                                 <h:outputLabel for="clientForm:habit" value="Número de Habitación"></h:outputLabel>
                                 <br/>
                                 <h:selectOneMenu >
-                                    <f:selectItems />
+                                    <f:selectItems value="#{reservaBean.modelHabitacion.listarhabitaciones()}" var="habitacion" itemLabel="#{habitacion.numeroHabitacion}" itemValue="#{habitacion}"/>
+
                                 </h:selectOneMenu>
                             </div>
                         </div>
@@ -81,16 +88,41 @@
                             <div class="col">
                                 <h:outputLabel for="clientForm:trabaj" value="Nombre del Trabajador"></h:outputLabel>
                                 <br/>
-                                <h:selectOneMenu >
-                                    <f:selectItems />
+                                <h:selectOneMenu value="#{reservaBean.trabajadorE.id}" >
+                                    <f:selectItems value="#{reservaBean.trabajador}" var="trabajador" itemLabel="#{trabajador.nombreTrabajador}" itemValue="#{trabajador.id}"/>
                                 </h:selectOneMenu>
                             </div>
                         </div>
+                        <!-- GRUPO DE FECHAS FALTANDO EL BEAN EN CADA VALUE -->
 
+                        <!-- Grupo: FECHA DE RESERVA-->
+                        <div class="formulario_grupo" id="grupo_fechreserva">
+                            <div class="col">
+                                <h3>feacha reserva</h3>
+                                    <div class="formulario__grupo-input">
+                                        <h:outputLabel  styleClass="formulario__label" value="feacha reserva:"/>
+                                        <h:inputText styleClass="form-control"  a:type="date" value="#{reservaBean.reserva}" var="reserva" itemLabel="#{reserva.fechaReserva}" itemValue="#{reserva.id}"/>
+
+                                    </div>
+                            </div>
+                        </div>
+
+                        <!-- Grupo: FECHA DE INGRESO-->
+                        <div class="formulario_grupo" id="grupo_fechingreso">
+                            <div class="col">
+                                <h:outputLabel for="fechingreso" styleClass="formulario__label" value="Fecha de Ingreso:"/>
+                                <div class="formulario__grupo-input">
+                                    <h:inputText id="fechingreso" a:type="date"  value="#{reservaBean.reserva}" var="reserva" itemLabel="#{reserva.fechaIngreso}" itemValue="#{reserva.id}"
+                                                 requiredMessage="Ingresa la Fecha de Ingreso" styleClass="form-control" >
+
+                                    </h:inputText>
+                                </div>
+                            </div>
+                        </div>
                         <!-- Grupo: TIPO DE RESERVA -->
                         <div class="formulario__grupo" id="grupo__reserva">
                             <div class="col">
-                                <h:outputLabel for="tiposreser" value="Tipo de Reserva"/>
+                                <h:outputLabel for="tiposreser" value="#{reservaBean.reserva}" var="reserva" itemLabel="#{reserva.tipoReserva}" itemValue="#{reserva.id}"/>
                                 <h:selectOneMenu id="tiposreser" styleClass="form-control">
                                     <f:selectItem itemValue="t" itemLabel="Reservación Tentativa"/>
                                     <f:selectItem itemValue="l" itemLabel="Reservación Limite"/>
@@ -100,52 +132,15 @@
                             </div>
                         </div>
 
-                        <!-- GRUPO DE FECHAS FALTANDO EL BEAN EN CADA VALUE -->
 
-                        <!-- Grupo: FECHA DE RESERVA
-                        <div class="formulario__grupo" id="grupo__fechreserva">
-                            <div class="col">
-                                <h:outputLabel for="fechreserva" styleClass="formulario__label" value="Fecha de ReservaEntity:"/>
-                                <div class="formulario__grupo-input">
-                                    <h:inputText id="fechreserva" a:type="date" value="#" required="true"
-                                                 requiredMessage="Ingresa la Fecha de Reservación" styleClass="form-control" >
-                                        <f:convertDateTime pattern="yyyy-MM-dd"/>
-                                    </h:inputText>
-                                </div>
-                            </div>
-                        </div>-->
-
-                        <!-- Grupo: FECHA DE INGRESO
-                        <div class="formulario__grupo" id="grupo__fechingreso">
-                            <div class="col">
-                                <h:outputLabel for="fechingreso" styleClass="formulario__label" value="Fecha de Ingreso:"/>
-                                <div class="formulario__grupo-input">
-                                    <h:inputText id="fechingreso" a:type="date" value="#" required="true"
-                                                 requiredMessage="Ingresa la Fecha de Ingreso" styleClass="form-control" >
-                                        <f:convertDateTime pattern="yyyy-MM-dd"/>
-                                    </h:inputText>
-                                </div>
-                            </div>
-                        </div>-->
-                        <!-- Grupo: FECHA DE SALIDA
-                        <div class="formulario__grupo" id="grupo__fechsalida">
-                            <div class="col">
-                                <h:outputLabel for="fechsalida" styleClass="formulario__label" value="Fecha de Salida:"/>
-                                <div class="formulario__grupo-input">
-                                    <h:inputText id="fechsalida" a:type="date" value="#" required="true"
-                                                 requiredMessage="Ingresa la Fecha de Salida" styleClass="form-control" >
-                                        <f:convertDateTime pattern="yyyy-MM-dd"/>
-                                    </h:inputText>
-                                </div>
-                            </div>
-                        </div> -->
 
                         <!-- Grupo: PRECIO DIARIO HABITACION -->
                         <div class="formulario__grupo" id="grupo__preciohabit">
                             <div class="col">
                                 <h:outputLabel for="preciohabit" styleClass="formulario__label" value="Precio diario de la Habitación:"/>
                                 <div class="formulario__grupo-input">
-                                    <h:inputText id="preciohabit" styleClass="form-control" required="true"
+                                    <h:inputText id="preciohabit" a:type="number" styleClass="form-control"   value="#{reservaBean.reserva}" var="reserva" itemLabel="#{reserva.costoAlojamiento}" itemValue="#{reserva.id}"
+                                                 required="true"
                                                  requiredMessage="Ingresa el Valor diario de la Habitación"/>
                                 </div>
                             </div>
@@ -154,7 +149,7 @@
                         <div class="formulario__grupo" id="grupo__estadohabit">
                             <div class="col">
                                 <h:outputLabel for="estado" value="Estado de la habitacion"/>
-                                <h:selectOneMenu id="estado" styleClass="form-control">
+                                <h:selectOneMenu id="estado" styleClass="form-control" value="#{reservaBean.reserva}" var="reserva" itemLabel="#{reserva.estado}" itemValue="#{reserva.id}">
                                     <f:selectItem itemValue="o" itemLabel="Ocupada"/>
                                     <f:selectItem itemValue="m" itemLabel="Mantenimiento"/>
                                     <f:selectItem itemValue="d" itemLabel="Disponible"/>
@@ -165,7 +160,7 @@
                         <br/>
                         <h:panelGrid columns="4">
                             <h:commandButton styleClass="btn btn-primary center-block" value="Guardar"
-                                             action="#"/>
+                                             action="#{reservaBean.agregarReserva()}"/>
                             <h:commandButton styleClass="btn btn-primary center-block" value="Consultar Reservas"
                                              action="#"/>
                             <h:commandButton styleClass="btn btn-primary center-block" value="Eliminar"
@@ -199,33 +194,18 @@
                                 </f:facet>
                                 <h:outputText value="#"/>
                             </h:column>
+
+
+
                             <h:column>
                                 <f:facet name="header">
-                                    <h:outputText value="Fecha de Reserva"/>
+                                    <h:outputText value="precio diario"/>
                                 </f:facet>
                                 <h:outputText value="#"/>
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
-                                    <h:outputText value="Fecha de Ingreso"/>
-                                </f:facet>
-                                <h:outputText value="#"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Fecha de Salida"/>
-                                </f:facet>
-                                <h:outputText value="#"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Costo de Alojamiento"/>
-                                </f:facet>
-                                <h:outputText value="#"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Estado de la Reserva"/>
+                                    <h:outputText value="Estado de la habitacion"/>
                                 </f:facet>
                                 <h:outputText value="#"/>
                             </h:column>

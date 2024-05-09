@@ -2,7 +2,10 @@ package sv.edu.udb.www.managedbeans;
 
 import jakarta.faces.bean.ManagedBean;
 import jakarta.faces.bean.SessionScoped;
+import sv.edu.udb.www.entities.ClienteEntity;
+import sv.edu.udb.www.entities.HabitacionEntity;
 import sv.edu.udb.www.entities.TrabajadorEntity;
+import sv.edu.udb.www.models.HabitacionModel;
 import sv.edu.udb.www.models.TrabajadorModel;
 
 import java.util.List;
@@ -10,49 +13,52 @@ import java.util.List;
 @SessionScoped
 public class TrabajadorBean {
 
-    TrabajadorModel modelTrajador = new TrabajadorModel();
+    private TrabajadorModel modelTrabajador = new TrabajadorModel();
+    private List<TrabajadorEntity> trabajadores;
+    private TrabajadorEntity trabajador = new TrabajadorEntity();
 
-    private List<TrabajadorEntity> Trabajador;
-
-    private TrabajadorEntity trabajador;
-
-    public TrabajadorModel getModelTrajador() {
-        return modelTrajador;
+    public TrabajadorBean() {
+        trabajador = new TrabajadorEntity();
     }
 
-    public void setModelTrajador(TrabajadorModel modelTrajador) {
-        this.modelTrajador = modelTrajador;
+    public TrabajadorModel getModelTrabajador() {
+        return modelTrabajador;
     }
 
-    public List<TrabajadorEntity> getTrabajador() {
-        return Trabajador;
+    public void setModelTrabajador(TrabajadorModel modelTrabajador) {
+        this.modelTrabajador = modelTrabajador;
+    }
+
+    public List<TrabajadorEntity> getTrabajadores() {
+        return trabajadores;
+    }
+
+    public void setTrabajadores(List<TrabajadorEntity> trabajadores) {
+        this.trabajadores = trabajadores;
+    }
+
+    public TrabajadorEntity getTrabajador() {
+        return trabajador;
     }
 
     public void setTrabajador(TrabajadorEntity trabajador) {
         this.trabajador = trabajador;
     }
 
-    public void setTrabajador(List<TrabajadorEntity> trabajador) {
-        Trabajador = trabajador;
-    }
-
     public void agregarTrabajador() {
-
-        modelTrajador.insertarTrabajador(this.trabajador);
+        modelTrabajador.insertarTrabajador(trabajador);
     }
 
     public void editarTrabajador() {
-        modelTrajador.modificarTrabajador(this.trabajador);
+        modelTrabajador.modificarTrabajador(trabajador);
     }
 
-    public void eliminarTrabajador(int idtrabajador) {
-
-        modelTrajador.eliminarTrabajador(idtrabajador);
-        this.Trabajador = modelTrajador.listarTrabajador();
+    public void eliminarTrabajador(int idTrabajador) {
+        modelTrabajador.eliminarTrabajador(idTrabajador);
+        trabajadores = modelTrabajador.listarTrabajador();
     }
 
-    public void CargarTrabajador(TrabajadorEntity trabajador){
-        this.trabajador = trabajador;
-
+    public void cargarTrabajadores() {
+        trabajadores = modelTrabajador.listarTrabajador();
     }
 }

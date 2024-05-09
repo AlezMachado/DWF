@@ -30,6 +30,12 @@ public class ReservaBean {
     private ClienteEntity cliente;
     private TrabajadorEntity trabajador;
 
+
+    public ReservaBean() {
+        reserva = new ReservaEntity();
+        trabajador = new TrabajadorEntity();
+    }
+
     public ReservaModel getModelReserva() {
         return modelReserva;
     }
@@ -97,9 +103,11 @@ public class ReservaBean {
     public void setCliente(List<ClienteEntity> cliente) {
         Cliente = cliente;
     }
-
+    public TrabajadorEntity getTrabajadorE(){
+        return trabajador;
+    }
     public List<TrabajadorEntity> getTrabajador() {
-        return Trabajador;
+        return modelTrabajador.listarTrabajador();
     }
 
     public void setTrabajador(TrabajadorEntity trabajador) {
@@ -131,8 +139,8 @@ public class ReservaBean {
 
     }
 
-    public void cargarReserva(ReservaEntity reserva) {
-        this.reserva = reserva;
+    public void cargarReserva() {
+        Reserva = modelReserva.listarReserva();
     }
 
 }
