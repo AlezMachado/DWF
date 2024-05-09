@@ -22,7 +22,7 @@ public class HabitacionModel {
             em.close();
         }
     }
-
+//ala
 
     public HabitacionEntity obtenerhabitacion(int idhabitacion) {
         EntityManager em = JpaUtil.getEntityManager();
